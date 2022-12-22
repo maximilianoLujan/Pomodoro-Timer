@@ -3,5 +3,11 @@
         "customize":"Personalizar",
         "restart": "Reiniciar sesión",
         "language":"ES"
+    },
+    "config": {
+        "focus":"Nivel de Concentracion",
+        "alarm":"Alarma",
+        "start":"Inicio Automatico",
+        "notification":"Notificaciones"
     }
 }

@@ -2,12 +2,13 @@ import { useTranslation } from "react-i18next";
 import DoneIcon from '@mui/icons-material/Done';
 
 
-export default function ModalLng(){
+export default function ModalLng({cerrar}){
     const [t,i18n] = useTranslation("global")
 
     function changeLanguage(newLanguage){
         i18n.changeLanguage(newLanguage)
         localStorage.setItem("lng",newLanguage)
+        cerrar()
     }
 
     return (
