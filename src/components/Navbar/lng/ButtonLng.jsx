@@ -4,12 +4,11 @@ import React, { useState } from 'react';
 import ModalLng from './ModalLng';
 
 
-export default function ButtonLng({cerrar}){
+export default function ButtonLng(){
     const [modal,setModal] = useState(false)
     const [t,i18n] = useTranslation("global")
     function handleClick(){
         setModal(!modal)
-        cerrar()
     }
     return(
         <div className='relative'>
