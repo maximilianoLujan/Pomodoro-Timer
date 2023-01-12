@@ -24,25 +24,25 @@ export default function ModalConfig(){
         <div className="flex flex-col shadow-2xl p-3">
             <button onClick={() => handleClick("concentracion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                 <AccessTimeFilledIcon className='mx-4'/>
-                <p className='mx-4'>{t("config.focus")}</p>
+                <p className='mx-4 font-bold'>{t("config.focus")}</p>
                 <ArrowForwardIcon/>
             </button>
                 {modals.category == "concentracion" ?<ModalConcentration back={back}/>:null}
             <button onClick={() => handleClick("alarma")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                 <NotificationsIcon className='mx-4'/>
-                <p className='mx-4'>{t("config.alarm")}</p>
+                <p className='mx-4 font-bold'>{t("config.alarm")}</p>
                 <ArrowForwardIcon/>
             </button>
                 {modals.category == "alarma"?<ModalAlarma back={back}/>:null}
             <button onClick={() => handleClick("inicio")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                 <RotateRightIcon className='mx-4'/>
-                <p className='mx-4'>{t("config.start")}</p>
+                <p className='mx-4 font-bold'>{t("config.start")}</p>
                 <ArrowForwardIcon/>
             </button>
                 {modals.category == "inicio"?<ModalInicio back={back}/>:null}
             <button onClick={() => handleClick("notificacion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                 <MarkChatUnreadIcon className='mx-4'/>
-                <p className='mx-4'>{t("config.notification")}</p>
+                <p className='mx-4 font-bold'>{t("config.notification")}</p>
                 <ArrowForwardIcon/>
             </button>
                 {modals.category == "notificacion"?<ModalNotificacion back={back}/>:null}

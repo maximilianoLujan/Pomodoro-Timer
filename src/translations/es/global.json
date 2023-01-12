@@ -9,5 +9,23 @@
         "alarm":"Alarma",
         "start":"Inicio Automatico",
         "notification":"Notificaciones"
+    },
+    "modals": {
+        "notifications":"Notificar al completar el temporizador",
+        "start1":"Inicio automático de pomodoros",
+        "start2":"Inicio automático de descansos",
+        "alarm":"Alarma al completar el temporizador",
+        "volume":"volume",
+        "concentration": {
+            "title":"Personalizar nivel de concentración",
+            "baby":"Paso de bebé",
+            "popular": "Popular",
+            "midle":"Medio",
+            "extended":"Extendido",
+            "personalize":"Personalizado",
+            "pomodoro":"Pomodoro",
+            "break": "Descanso",
+            "breaklong":"Descanso Largo"
+        }
     }
 }

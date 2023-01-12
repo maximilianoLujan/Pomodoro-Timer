@@ -10,9 +10,9 @@ export default function ModalNotificacion({back}){
                 <ArrowBackIcon className="cursor-pointer" fontSize='large' onClick={back}/>
                 <p className="text-2xl">{t("config.notification")}</p>
             </div>
-            <div className="flex justify-around">
-                <p></p>
+            <div className="flex justify-around h-full items-center font-bold">
                 <Switch></Switch>
+                <p>{t("modals.notifications")}</p>
             </div>
         </div>
     )
