@@ -7,14 +7,17 @@ import ModalLng from './ModalLng';
 export default function ButtonLng(){
     const [modal,setModal] = useState(false)
     const [t,i18n] = useTranslation("global")
+    function handleClick(){
+        setModal(!modal)
+    }
     return(
         <div className='relative'>
-            <button onClick={() => setModal(!modal) } className='flex items-center '>
+            <button onClick={() => handleClick() } className='flex items-center '>
                 <LanguageIcon fontSize='medium'/>
                 <p className='hidden sm:block'>{t("navbar.language")}</p>
             </button>
             {modal
-            ?<ModalLng/>
+            ?<ModalLng cerrar={handleClick}/>
             :null}
         </div>
     )

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export default function ButtonRestart(){
     const [t,i18n] = useTranslation("global")
     return(
-    <button className='flex items-center '>
+    <button className='flex items-center mx-4'>
         <RestartAltIcon fontSize='medium'/>
         <p className='hidden sm:block'>{t("navbar.restart")}</p>
     </button>)

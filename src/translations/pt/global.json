@@ -3,5 +3,29 @@
         "customize":"Personalize",
         "restart": "Reiniciar Sessão",
         "language":"PT"
+    },
+    "config": {
+        "focus":"Nivel de Foco",
+        "alarm":"Alarme",
+        "start":"Começo Automatico",
+        "notification":"Notificações "
+    },
+    "modals": {
+        "notifications":"Notificar al completar el temporizador",
+        "start1":"Inicio automático de pomodoros",
+        "start2":"Inicio automático de descansos",
+        "alarm":"Alarme quando o tempo acabar",
+        "volume":"Volume",
+        "concentration": {
+            "title":"Personalize nível de foco",
+            "baby":"Passos de bêbe",
+            "popular": "Popular",
+            "midle":"Médio",
+            "extended":"Extendido",
+            "personalize":"Personalizado",
+            "pomodoro":"Pomodoro",
+            "break": "Descanso",
+            "breaklong":"Longo descanso"
+        }
     }
 }

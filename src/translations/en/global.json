@@ -3,5 +3,29 @@
         "customize":"customize",
         "restart": "Restart Session",
         "language":"EN"
+    },
+    "config": {
+        "focus":"Focus Level",
+        "alarm":"Alarm",
+        "start":"Auto Start",
+        "notification":"notifications"
+    },
+    "modals": {
+        "notifications":"Notificar al completar el temporizador",
+        "start1":"Inicio automático de pomodoros",
+        "start2":"Inicio automático de descansos",
+        "alarm":"Alarm on completion",
+        "volume":"volume",
+        "concentration": {
+            "title":"Customize focus level",
+            "baby":"Baby step",
+            "popular": "Popular",
+            "midle":"Medium",
+            "extended":"Extended",
+            "personalize":"Personalize",
+            "pomodoro":"Pomodoro",
+            "break": "Rest",
+            "breaklong":"Long Rest"
+        }
     }
 }
