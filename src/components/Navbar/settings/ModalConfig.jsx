@@ -13,39 +13,51 @@ import ModalNotificacion from './modals/ModalNotificacion';
 export default function ModalConfig(){
     const [t,i18n] = useTranslation("global")
     const [modals,setModals] = useState({})
+    const [config,setConfig] = useState(true)
 
     function handleClick(category){
         setModals({category: category})
+        setConfig(!config)
     }
     function back(){
         setModals({})
+        setConfig(true)
     }
     return(
-        <div className="flex flex-col shadow-2xl p-3">
-            <button onClick={() => handleClick("concentracion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
-                <AccessTimeFilledIcon className='mx-4'/>
-                <p className='mx-4 font-bold'>{t("config.focus")}</p>
-                <ArrowForwardIcon/>
-            </button>
+        <div>
+            {config
+            ?<div className="flex flex-col shadow-2xl p-3">
+                <button onClick={() => handleClick("concentracion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                    <AccessTimeFilledIcon className='mx-4'/>
+                    <p className='mx-4 font-bold'>{t("config.focus")}</p>
+                    <ArrowForwardIcon/>
+                </button>
+                    
+                <button onClick={() => handleClick("alarma")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                    <NotificationsIcon className='mx-4'/>
+                    <p className='mx-4 font-bold'>{t("config.alarm")}</p>
+                    <ArrowForwardIcon/>
+                </button>
+                    
+                <button onClick={() => handleClick("inicio")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                    <RotateRightIcon className='mx-4'/>
+                    <p className='mx-4 font-bold'>{t("config.start")}</p>
+                    <ArrowForwardIcon/>
+                </button>
+                    
+                <button onClick={() => handleClick("notificacion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                    <MarkChatUnreadIcon className='mx-4'/>
+                    <p className='mx-4 font-bold'>{t("config.notification")}</p>
+                    <ArrowForwardIcon/>
+                </button>
+                    
+            </div>
+            :<div className="flex flex-col shadow-2xl p-3 w-full h-max">
                 {modals.category == "concentracion" ?<ModalConcentration back={back}/>:null}
-            <button onClick={() => handleClick("alarma")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
-                <NotificationsIcon className='mx-4'/>
-                <p className='mx-4 font-bold'>{t("config.alarm")}</p>
-                <ArrowForwardIcon/>
-            </button>
                 {modals.category == "alarma"?<ModalAlarma back={back}/>:null}
-            <button onClick={() => handleClick("inicio")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
-                <RotateRightIcon className='mx-4'/>
-                <p className='mx-4 font-bold'>{t("config.start")}</p>
-                <ArrowForwardIcon/>
-            </button>
                 {modals.category == "inicio"?<ModalInicio back={back}/>:null}
-            <button onClick={() => handleClick("notificacion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
-                <MarkChatUnreadIcon className='mx-4'/>
-                <p className='mx-4 font-bold'>{t("config.notification")}</p>
-                <ArrowForwardIcon/>
-            </button>
                 {modals.category == "notificacion"?<ModalNotificacion back={back}/>:null}
+            </div>}
         </div>
     )
 }

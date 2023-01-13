@@ -5,9 +5,9 @@ import { Switch } from "@mui/material";
 export default function ModalNotificacion({back}){
     const [t,i18n] = useTranslation("global")
     return(
-        <div className="absolute bg-white h-full w-full flex flex-col">
-            <div className="flex justify-around">
-                <ArrowBackIcon className="cursor-pointer" fontSize='large' onClick={back}/>
+        <div className="bg-white h-max w-full flex flex-col p-6">
+            <div className="flex mb-6">
+                <ArrowBackIcon className="cursor-pointer hover:text-blue-600 mr-4" fontSize='large' onClick={back}/>
                 <p className="text-2xl">{t("config.notification")}</p>
             </div>
             <div className="flex justify-around h-full items-center font-bold">
