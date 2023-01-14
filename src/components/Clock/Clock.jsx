@@ -28,7 +28,7 @@ export default function Clock(){
         setLongRest({...longRest,active:true})
     }
     return(
-        <div className="w-full lg:w-3/4 flex flex-col items-center">
+        <div className="w-full lg:w-3/4 flex flex-col items-center lg:border-r-2">
             <h2 className='font-bold mt-8 text-xl'>¿{t("clock.challenge")}? 😒</h2>
             <div className='flex mt-14 w-3/4 justify-evenly'>
                 <button className={pomodoro.active?'flex text-xl py-2 px-10 text-primary hover:bg-primary/10 border-b-2 border-black':'flex text-xl py-2 px-10 text-primary hover:bg-primary/10'} onClick={(e) => handleClickPomodoro(e.target)}>

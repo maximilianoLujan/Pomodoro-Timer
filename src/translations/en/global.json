@@ -32,5 +32,11 @@
         "challenge":"Why don't you take the challenge",
         "level":"level",
         "start":"start"
+    },
+    "todos":{
+        "task":"Tasks",
+        "add":"Add here the task you will focus on",
+        "boton1":"Guardar",
+        "boton2":"cancelar"
     }
 }
