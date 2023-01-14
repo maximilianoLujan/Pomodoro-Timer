@@ -16,7 +16,7 @@ export default function ButtonConfig(){
             </button>
             <div>
                 {modal
-                ?<div style={{left:'-8rem'}} className='absolute'>
+                ?<div style={{left:'-8rem'}} className='absolute w-96'>
                     <ModalConfig/>
                 </div>
                 :null}

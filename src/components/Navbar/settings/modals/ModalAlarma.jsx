@@ -20,13 +20,13 @@ export default function ModalAlarma({back}){
 
 
     return(
-        <div className="absolute bg-white h-full w-full flex flex-col">
-            <div className="flex justify-around">
-                <ArrowBackIcon className="cursor-pointer" fontSize='large' onClick={back}/>
+        <div className="bg-white h-max w-full flex flex-col p-6">
+            <div className="flex mb-6">
+                <ArrowBackIcon className="cursor-pointer hover:text-blue-600 mr-4" fontSize='large' onClick={back}/>
                 <p className="text-2xl">{t("config.alarm")}</p>
             </div>
-            <div className="flex flex-col justify-around items-center font-bold h-full">
-                <p className="">
+            <div className="flex flex-col justify-around items-center font-bold h-full mb-4">
+                <p className="mb-2 text-left w-full">
                     {t("modals.alarm")}
                 </p>
                 <div className="flex border-slate-400  border-2 border-solid w-full justify-evenly rounded">
@@ -39,9 +39,9 @@ export default function ModalAlarma({back}){
                 </div>
             </div>
             <div className="w-full flex flex-col">
-                <div className="w-full flex justify-between">
+                <div className="w-full flex justify-between mb-2">
                     <p className="font-bold">VOLUMEN</p>
-                    <p className="font-bold">{volumen}</p>
+                    <p className="font-bold">{volumen}%</p>
                 </div>
                 <input defaultValue={50} onChange={handleChangeRange} className="w-full" type="range" name="range" />
             </div>
