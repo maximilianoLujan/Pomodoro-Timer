@@ -1,20 +1,22 @@
 import NavBar from './components/Navbar/NavBar'
-import { useSelector } from 'react-redux'
+import Clock from './components/Clock/Clock'
+import Todos from './components/Todos/Todos'
 
 function App() {
-  const value = useSelector(state => state.config.value)
 
   console.log("hola")
 
   return (
-    <main>
+    <div className='max-w-screen-2xl'>
       <NavBar/>
-      <div>
-        <h1>{value.focus}</h1>
-        <h1>{value.recreo}</h1>
-        <h1>{value.breakLong}</h1>
-      </div>
-    </main>
+      <main className='w-full p-7'>
+        <div className='flex flex-col lg:flex-row'>
+          <Clock/>
+          <Todos/>
+        </div>
+      </main>
+    </div>
+    
   )
 }
 
