@@ -27,5 +27,10 @@
             "break": "Rest",
             "breaklong":"Long Rest"
         }
+    },
+    "clock":{
+        "challenge":"Why don't you take the challenge",
+        "level":"level",
+        "start":"start"
     }
 }

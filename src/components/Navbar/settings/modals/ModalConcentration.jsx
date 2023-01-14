@@ -27,6 +27,21 @@ export default function ModalConcentracion({back}){
             setIsCustomize(true)
         } else{
             setIsCustomize(false)
+            switch (e.target.value) {
+                case 'bebe':
+                    dispatch(setValues({focus:10,recreo:5,breakLong:10}))
+                    break;
+                case 'popular':
+                    dispatch(setValues({focus:20,recreo:5,breakLong:15}))
+                    break;
+                case 'medio':
+                    dispatch(setValues({focus:40,recreo:8,breakLong:20}))
+                    break;
+                case 'extendido':
+                    dispatch(setValues({focus:60,recreo:10,breakLong:25}))
+                default:
+                    break;
+            }
         }
     }
 

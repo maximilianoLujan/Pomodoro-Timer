@@ -27,5 +27,10 @@
             "break": "Descanso",
             "breaklong":"Descanso Largo"
         }
+    },
+    "clock":{
+        "challenge":"No quieres aceptar un reto",
+        "level":"Nivel",
+        "start":"Inicio"
     }
 }
