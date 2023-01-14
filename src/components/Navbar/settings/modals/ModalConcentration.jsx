@@ -31,7 +31,7 @@ export default function ModalConcentracion({back}){
     }
 
     //Cambiamos el tiempo en caso que el usuario haya elegido personalizado
-    const handleChangeTime = (e) => {
+    const handleChangeTime = async (e) => {
         const auxiliar = e.target.id
         custom[auxiliar] = e.target.value
         setCustom(custom)

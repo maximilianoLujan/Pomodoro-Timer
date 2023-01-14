@@ -12,8 +12,7 @@ export const configSlice = createSlice({
   reducers: {
     setValues: (state,action) => { 
         const newState = {...action.payload}
-        console.log(action.payload)
-        console.log(state.value)
+        state.value = newState
     }
   }
 })
