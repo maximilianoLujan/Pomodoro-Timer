@@ -36,7 +36,8 @@
     "todos":{
         "task":"Tasks",
         "add":"Add here the task you will focus on",
-        "boton1":"Guardar",
-        "boton2":"cancelar"
+        "button1":"Guardar",
+        "button2":"cancelar",
+        "placeholder":"Task description"
     }
 }

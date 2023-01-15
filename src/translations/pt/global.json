@@ -36,7 +36,8 @@
     "todos":{
         "task":"Tarefas",
         "add": " Adicione aqui a tarefa em que você se concentrará",
-        "boton1":"Guardar",
-        "boton2":"cancelar"
+        "button1":"Guardar",
+        "button2":"cancelar",
+        "placeholder":"Descrição da tarefa"
     }
 }
