@@ -32,5 +32,12 @@
         "challenge":"você não quer aceitar o desafio",
         "level":"Nível",
         "start":"começar"
+    },
+    "todos":{
+        "task":"Tarefas",
+        "add": " Adicione aqui a tarefa em que você se concentrará",
+        "button1":"Guardar",
+        "button2":"cancelar",
+        "placeholder":"Descrição da tarefa"
     }
 }

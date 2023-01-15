@@ -32,5 +32,12 @@
         "challenge":"No quieres aceptar un reto",
         "level":"Nivel",
         "start":"Inicio"
+    },
+    "todos":{
+        "task":"Tareas",
+        "add":"Agregue aqui la tarea en la que se enfocara",
+        "button1":"Guardar",
+        "button2":"cancelar",
+        "placeholder":"Descripción de la tarea"
     }
 }

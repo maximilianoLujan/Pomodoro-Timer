@@ -3,9 +3,6 @@ import Clock from './components/Clock/Clock'
 import Todos from './components/Todos/Todos'
 
 function App() {
-
-  console.log("hola")
-
   return (
     <div className='max-w-screen-2xl'>
       <NavBar/>
