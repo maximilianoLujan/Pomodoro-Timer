@@ -29,7 +29,6 @@ export default function Task(props){
         setTask(newTask)
         addTarea(newTask)
         setTaskName('')
-        props.updateTask()
     }
 
     if (addTask){
@@ -38,12 +37,12 @@ export default function Task(props){
             <TaskList />
         <div className="p-6 flex flex-col items-start border-2 border-black rounded-md">
             <input onChange={handleChangeInput} placeholder={t("todos.placeholder")} type="text" name="task" className="mb-4 border-0" />
-            <div>
+            <div className="flex">
                 <button className="bg-primary/90 text-neutral-200 py-2 px-6 rounded-md hover:bg-primary" onClick={handleClickEnviar}>{t("todos.button1")}</button>
-                    <button className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary" onClick={handleClick}>{t("todos.button2")}</button>
-                    </div>
-                </div>
-            </>
+                <button className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary" onClick={handleClick}>{t("todos.button2")}</button>
+            </div>
+        </div>
+        </>
         )
     } else{
         return(
