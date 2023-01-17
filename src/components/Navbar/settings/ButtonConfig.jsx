@@ -14,13 +14,11 @@ export default function ButtonConfig(){
                 <TuneIcon fontSize='medium'/>
                 <p className='hidden sm:block'>{t("navbar.customize")}</p>
             </button>
-            <div>
-                {modal
-                ?<div style={{left:'-8rem'}} className='absolute w-96'>
-                    <ModalConfig/>
-                </div>
-                :null}
+            {modal
+            ?<div  className='absolute w-80' style={{left:'-12rem'}}>
+                <ModalConfig/>
             </div>
+            :null}
         </div>
     )
 }

@@ -7,9 +7,27 @@ export default function useTodo(initialState){
         setTodo([...todo,tarea])
     }
     
-    const removeTask = (id) => {
-        const newList = todo.filter(el => el.id != id)
+    const markTask = (id) => {
+        const newList = todo.map(el => {
+            if (el.id == id){
+                el.done = !el.done
+            }
+            return el
+        })
+        console.log(newList)
         setTodo(newList)
     }
-    return [ todo , addTarea , removeTask]
+    const deleteUncompletedTaks = () => {
+        const newTodo = todo.filter(el => el.done != false)
+        setTodo(newTodo)
+    }
+    const deleteCompletedTaks = () => {
+        const newTodo = todo.filter(el => el.done == false)
+        setTodo(newTodo)
+    }
+
+
+
+
+    return [ todo , addTarea , markTask , deleteUncompletedTaks , deleteCompletedTaks]
 }

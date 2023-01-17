@@ -38,6 +38,10 @@
         "add":"Agregue aqui la tarea en la que se enfocara",
         "button1":"Guardar",
         "button2":"cancelar",
-        "placeholder":"Descripción de la tarea"
+        "placeholder":"Descripción de la tarea",
+        "hide":"Ocultar tareas completadas",
+        "show":"Mostrar tarefas concluidas",
+        "trash":"Remover tareas por hacer",
+        "trashdone":"Remove tareas completadas"
     }
 }

@@ -12,7 +12,7 @@ export default function ModalLng({cerrar}){
     }
 
     return (
-        <div  style={{left:'-9rem',width:'9rem'}} className="p-2 absolute flex flex-col shadow-2xl m-4">
+        <div  style={{left:'-9rem',width:'9rem'}} className="p-2 absolute z-50 bg-slate-50 flex flex-col shadow-2xl m-4">
             <div onClick={() => changeLanguage("en")} className="h-10 flex items-center cursor-pointer hover:bg-sky-500 hover:text-sky-100">
                 <div className="w-8">
                 {i18n.language == "en"
