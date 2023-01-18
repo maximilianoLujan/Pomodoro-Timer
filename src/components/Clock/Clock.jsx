@@ -29,18 +29,18 @@ export default function Clock(){
     }
     return(
         <div className="w-full lg:w-3/4 flex flex-col items-center lg:border-r-2">
-            <h2 className='font-bold mt-8 text-xl'>¿{t("clock.challenge")}? 😒</h2>
-            <div className='flex mt-14 w-3/4 justify-evenly'>
-                <button className={pomodoro.active?'flex text-xl py-2 px-10 text-primary hover:bg-primary/10 border-b-2 border-black':'flex text-xl py-2 px-10 text-primary hover:bg-primary/10'} onClick={(e) => handleClickPomodoro(e.target)}>
-                    <p className='mr-4'>{t("modals.concentration.pomodoro")}</p>
+            <h2 className='font-bold text-xl'>¿{t("clock.challenge")}? 😒</h2>
+            <div className='flex mt-10 w-full justify-evenly mb-10'>
+                <button className={pomodoro.active?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 border-b-2 border-black items-center':'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 items-center'} onClick={(e) => handleClickPomodoro(e.target)}>
+                    <p className='text-center md:mr-4'>{t("modals.concentration.pomodoro")}</p>
                     <p className='font-black'>{pomodoro.time}</p>
                 </button>
-                <button className={rest.active?'flex text-xl py-2 px-10 text-secondary hover:bg-secondary/10 border-b-2 border-black':'flex text-xl py-2 px-10 text-secondary hover:bg-secondary/10'}  onClick={(e) => handleClickRest(e.target)}>
-                    <p className='mr-4'>{t("modals.concentration.break")} </p>
+                <button className={rest.active?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-secondary/10 border-b-2 border-black items-center':'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-secondary/10 items-center'}  onClick={(e) => handleClickRest(e.target)}>
+                    <p className='text-center md:mr-4'>{t("modals.concentration.break")} </p>
                     <p className='font-black'>{rest.time}</p>
                 </button>
-                <button className={longRest.active?'flex text-xl py-2 px-10 text-secondary hover:bg-secondary/10 border-b-2 border-black':'flex text-xl py-2 px-10 text-secondary hover:bg-secondary/10'} onClick={(e) => handleClickLongRest(e.target)}>
-                    <p className='mr-4'>{t("modals.concentration.breaklong")}</p>
+                <button className={longRest.active?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-secondary/10 border-b-2 border-black items-center':'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-secondary/10 items-center'} onClick={(e) => handleClickLongRest(e.target)}>
+                    <p className='text-center md:mr-4'>{t("modals.concentration.breaklong")}</p>
                     <p className='font-black'>{longRest.time}</p>
                 </button>
             </div>

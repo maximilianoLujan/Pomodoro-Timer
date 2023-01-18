@@ -24,9 +24,9 @@ export default function ModalConfig(){
         setConfig(true)
     }
     return(
-        <div>
+        <div >
             {config
-            ?<div className="flex flex-col shadow-2xl p-3">
+            ?<div className="flex flex-col shadow-2xl p-3 bg-slate-50">
                 <button onClick={() => handleClick("concentracion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                     <AccessTimeFilledIcon className='mx-4'/>
                     <p className='mx-4 font-bold'>{t("config.focus")}</p>

@@ -38,6 +38,9 @@
         "add": " Adicione aqui a tarefa em que você se concentrará",
         "button1":"Guardar",
         "button2":"cancelar",
-        "placeholder":"Descrição da tarefa"
+        "placeholder":"Descrição da tarefa",
+        "hide":"Ocultar tarefas concluidas",
+        "trash":"Remover tarefas para completar",
+        "trashdone":"Remover tarefas concluidas"
     }
 }

@@ -38,6 +38,10 @@
         "add":"Add here the task you will focus on",
         "button1":"Guardar",
         "button2":"cancelar",
-        "placeholder":"Task description"
+        "placeholder":"Task description",
+        "hide":"Hide completed task",
+        "show":"Show completed task",
+        "trash":"Remove to do list",
+        "trashdone":"Remove done list"
     }
 }
