@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next"
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Task from "./Task"
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -12,10 +11,17 @@ import useTodo from "../../hooks/useTodo";
 
 export default function Todos(){
     const [t] = useTranslation("global")
-    const [tareasCount,setTareasCount] = useState(0)
     const [seeOptions,setSeeOptions] = useState(false)
     const [realizadas,setRealizadas] = useState(false)
-    const [ todo , addTarea , markTask , deleteUncompletedTaks , deleteCompletedTaks] = useTodo([])
+    const [ todo, 
+        addTarea,
+        markTask,
+        deleteUncompletedTaks,
+        deleteCompletedTaks,
+        setEditTask,
+        cancelEditTask,
+        updateTodo,
+        deleteTask] = useTodo([])
 
 
     const handleClickDeleteUncompletedTasks = () => {
@@ -36,7 +42,7 @@ export default function Todos(){
             <div className="flex justify-between items-center mb-4 relative">
                 <div className="flex">
                     <p className="mr-4 text-3xl font-bold">{t("todos.task")}</p>
-                    <p className=" text-3xl font-bold">{tareasCount}</p>
+                    <p className=" text-3xl font-bold">{todo.length}</p>
                 </div>
                 <div >
                     <MoreHorizIcon onClick={handleClickOptions} className="cursor-pointer" fontSize="medium"/>
@@ -60,7 +66,15 @@ export default function Todos(){
                     </div>
                 </div>}
             </div>
-            <Task todo={todo} addTarea={addTarea} markTask={markTask} realizadas={realizadas}/>
+            <Task 
+            cancelEditTask={cancelEditTask} 
+            todo={todo} addTarea={addTarea} 
+            markTask={markTask} 
+            realizadas={realizadas} 
+            setEditTask={setEditTask}
+            updateTodo={updateTodo}
+            deleteTask={deleteTask}
+            />
         </div>
     )
 }
