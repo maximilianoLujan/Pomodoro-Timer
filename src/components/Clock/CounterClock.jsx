@@ -2,7 +2,7 @@ import { useState , useEffect } from "react"
 import { useTranslation } from "react-i18next"
 
 
-export default function CounterClock({ bg , time , name}){
+export default function CounterClock({ bg , time , name , minuts , seconds}){
     const [t] = useTranslation("global")
 
     return(
@@ -17,7 +17,7 @@ export default function CounterClock({ bg , time , name}){
                         boxShadow:'inset 4px 4px 6px -1px rgba(0,0,0,0.2),inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05)'}}>
                         <div className="flex flex-col items-center"> 
                             <p className="font-light tracking-wide text-7xl" style={{color:bg}}>
-                                {time}:00
+                                {minuts?minuts:time}:{seconds}
                             </p>
                             <div className="flex flex-col items-center mt-4">
                                 <p style={{color:bg}}>
@@ -38,12 +38,20 @@ export default function CounterClock({ bg , time , name}){
                     <stop offset="100%" stopColor="#673ab7" />
                 </linearGradient>
             </defs>
-            <circle className="fill-none stroke-blue-600" cx="192px" cy="192px" r="175px"
+            <circle className="fill-none stroke-blue-600 hidden lg:block" cx="192px" cy="192px" r="175px"
             strokeLinecap="round"
             style={{
                 strokeWidth:'35px',
-                strokeDasharray:'0',
-                strokeDashoffset:'10'
+                strokeDasharray:'1100',
+                strokeDashoffset:'1100'
+            }} 
+            />
+            <circle className="fill-none stroke-blue-600 lg:hidden" cx="120px" cy="120px" r="115px"
+            strokeLinecap="round"
+            style={{
+                strokeWidth:'10px',
+                strokeDasharray:'1100',
+                strokeDashoffset:'1100'
             }} 
             />
             </svg>

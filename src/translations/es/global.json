@@ -31,7 +31,8 @@
     "clock":{
         "challenge":"No quieres aceptar un reto",
         "level":"Nivel",
-        "start":"Inicio"
+        "start":"Inicio",
+        "stop":"Detener"
     },
     "todos":{
         "task":"Tareas",

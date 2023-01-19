@@ -31,7 +31,8 @@
     "clock":{
         "challenge":"você não quer aceitar o desafio",
         "level":"Nível",
-        "start":"começar"
+        "start":"começar",
+        "stop":"Pare"
     },
     "todos":{
         "task":"Tarefas",
