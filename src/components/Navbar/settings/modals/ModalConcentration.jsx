@@ -10,6 +10,7 @@ export default function ModalConcentracion({back}){
     const [concentration,setConcentration] = useState('')
     const [isCustomize,setIsCustomize] = useState(false) 
     const [custom,setCustom] = useState({
+        nive:'Custom',
         focus:50,
         recreo:50,
         breakLong:50
@@ -29,16 +30,16 @@ export default function ModalConcentracion({back}){
             setIsCustomize(false)
             switch (e.target.value) {
                 case 'bebe':
-                    dispatch(setValues({focus:10,recreo:5,breakLong:10}))
+                    dispatch(setValues({nivel:'Paso de bebe',focus:10,recreo:5,breakLong:10}))
                     break;
                 case 'popular':
-                    dispatch(setValues({focus:20,recreo:5,breakLong:15}))
+                    dispatch(setValues({nivel:'Popular',focus:20,recreo:5,breakLong:15}))
                     break;
                 case 'medio':
-                    dispatch(setValues({focus:40,recreo:8,breakLong:20}))
+                    dispatch(setValues({nivel:'Medio',focus:40,recreo:8,breakLong:20}))
                     break;
                 case 'extendido':
-                    dispatch(setValues({focus:60,recreo:10,breakLong:25}))
+                    dispatch(setValues({nivel:'Extendido',focus:60,recreo:10,breakLong:25}))
                 default:
                     break;
             }
