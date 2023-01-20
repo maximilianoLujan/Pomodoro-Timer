@@ -8,13 +8,15 @@ export default function ModalConcentracion({back}){
     const dispatch = useDispatch()
     const [t,i18n] = useTranslation("global")
     const [concentration,setConcentration] = useState('')
-    const [isCustomize,setIsCustomize] = useState(false) 
+/**
+ *     const [isCustomize,setIsCustomize] = useState(false) 
     const [custom,setCustom] = useState({
         nive:'Custom',
         focus:50,
         recreo:50,
         breakLong:50
     })
+ */
     const [focus,setFocus] = useState(50)
     const [recreo,setRecreo] = useState(50)
     const [breakLong,setBreakLong] = useState(50)
@@ -25,9 +27,9 @@ export default function ModalConcentracion({back}){
     const handleClickRadio = (e) => {
         setConcentration(e.target.value)
         if (e.target.value == 'personalizado'){
-            setIsCustomize(true)
+            //setIsCustomize(true)
         } else{
-            setIsCustomize(false)
+            //setIsCustomize(false)
             switch (e.target.value) {
                 case 'bebe':
                     dispatch(setValues({nivel:'Paso de bebe',focus:10,recreo:5,breakLong:10}))
@@ -45,28 +47,32 @@ export default function ModalConcentracion({back}){
             }
         }
     }
-
-    //Cambiamos el tiempo en caso que el usuario haya elegido personalizado
-    const handleChangeTime = async (e) => {
-        const auxiliar = e.target.id
-        custom[auxiliar] = e.target.value
-        setCustom(custom)
-        switch (auxiliar) {
-            case 'focus':
-                setFocus(custom[auxiliar])
-                break;
-            case 'break':
-                setRecreo(custom[auxiliar])
-                break;
-            case 'breakLong':
-                setBreakLong(custom[auxiliar])
-                break;
-            
-                default:
-                break;
-        }
-        dispatch(setValues({focus,recreo,breakLong}))
-    }
+/**
+ //Cambiamos el tiempo en caso que el usuario haya elegido personalizado
+ const handleChangeTime = async (e) => {
+     const auxiliar = e.target.id
+     custom[auxiliar] = e.target.value
+     setCustom(custom)
+     switch (auxiliar) {
+         case 'focus':
+             setFocus(custom[auxiliar])
+             break;
+         case 'break':
+             setRecreo(custom[auxiliar])
+             break;
+         case 'breakLong':
+             setBreakLong(custom[auxiliar])
+             break;
+         
+             default:
+             break;
+     }
+     dispatch(setValues({focus,recreo,breakLong}))
+ }
+ * 
+ * 
+ *  
+ */
 
     
     return(
@@ -112,7 +118,14 @@ export default function ModalConcentracion({back}){
                             <p className="text-slate-400">60 min  *  10 min  *  25min</p>
                         </div>
                 </div>
-                <div className="w-full flex mb-3">
+            </form>
+        </div>
+    )
+}
+
+
+/**
+ *               <div className="w-full flex mb-3">
                     <label>
                         <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'personalizado'} />
                     </label>
@@ -143,7 +156,4 @@ export default function ModalConcentracion({back}){
                             </section>
                         </div>
                 </div>
-            </form>
-        </div>
-    )
-}
+ */

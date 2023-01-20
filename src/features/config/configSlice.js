@@ -4,9 +4,9 @@ export const configSlice = createSlice({
   name: 'config',
   initialState: {
     value: {
-        focus:50,
-        recreo:50,
-        breakLong:50
+        focus:10,
+        recreo:5,
+        breakLong:10
     }
   },
   reducers: {
