@@ -10,7 +10,7 @@ import ModalAlarma from './modals/ModalAlarma';
 import ModalInicio from './modals/ModalInicio';
 import ModalNotificacion from './modals/ModalNotificacion';
 
-export default function ModalConfig(){
+export default function ModalConfig({bebe,medio,popular,extendido,changeChecked}){
     const [t,i18n] = useTranslation("global")
     const [modals,setModals] = useState({})
     const [config,setConfig] = useState(true)
@@ -53,7 +53,7 @@ export default function ModalConfig(){
                     
             </div>
             :<div className="flex flex-col shadow-2xl p-3 w-full h-max">
-                {modals.category == "concentracion" ?<ModalConcentration back={back}/>:null}
+                {modals.category == "concentracion" ?<ModalConcentration bebe={bebe} popular={popular} medio={medio} extendido={extendido} changeChecked={changeChecked} back={back}/>:null}
                 {modals.category == "alarma"?<ModalAlarma back={back}/>:null}
                 {modals.category == "inicio"?<ModalInicio back={back}/>:null}
                 {modals.category == "notificacion"?<ModalNotificacion back={back}/>:null}

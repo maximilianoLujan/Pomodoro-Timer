@@ -4,11 +4,14 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setValues } from "../../../../features/config/configSlice";
 
-export default function ModalConcentracion({back}){
+export default function ModalConcentracion({back , bebe , medio, popular, extendido ,changeChecked}){
     const dispatch = useDispatch()
     const [t,i18n] = useTranslation("global")
     const [concentration,setConcentration] = useState('')
-    const [isCustomize,setIsCustomize] = useState(false) 
+
+
+/**
+ *     const [isCustomize,setIsCustomize] = useState(false) 
     const [custom,setCustom] = useState({
         nive:'Custom',
         focus:50,
@@ -18,57 +21,65 @@ export default function ModalConcentracion({back}){
     const [focus,setFocus] = useState(50)
     const [recreo,setRecreo] = useState(50)
     const [breakLong,setBreakLong] = useState(50)
+ */
 
 
 
     //Manejamos el estado de los inputs radio
     const handleClickRadio = (e) => {
         setConcentration(e.target.value)
+        changeChecked(e.target.value)
         if (e.target.value == 'personalizado'){
-            setIsCustomize(true)
+            //setIsCustomize(true)
         } else{
-            setIsCustomize(false)
+            //setIsCustomize(false)
             switch (e.target.value) {
                 case 'bebe':
                     dispatch(setValues({nivel:'Paso de bebe',focus:10,recreo:5,breakLong:10}))
                     break;
                 case 'popular':
                     dispatch(setValues({nivel:'Popular',focus:20,recreo:5,breakLong:15}))
+
                     break;
                 case 'medio':
                     dispatch(setValues({nivel:'Medio',focus:40,recreo:8,breakLong:20}))
+
                     break;
                 case 'extendido':
                     dispatch(setValues({nivel:'Extendido',focus:60,recreo:10,breakLong:25}))
+
                 default:
                     break;
             }
         }
     }
+/**
+ //Cambiamos el tiempo en caso que el usuario haya elegido personalizado
+ const handleChangeTime = async (e) => {
+     const auxiliar = e.target.id
+     custom[auxiliar] = e.target.value
+     setCustom(custom)
+     switch (auxiliar) {
+         case 'focus':
+             setFocus(custom[auxiliar])
+             break;
+         case 'break':
+             setRecreo(custom[auxiliar])
+             break;
+         case 'breakLong':
+             setBreakLong(custom[auxiliar])
+             break;
+         
+             default:
+             break;
+     }
+     dispatch(setValues({focus,recreo,breakLong}))
+ }
+ * 
+ * 
+ *  
+ */
 
-    //Cambiamos el tiempo en caso que el usuario haya elegido personalizado
-    const handleChangeTime = async (e) => {
-        const auxiliar = e.target.id
-        custom[auxiliar] = e.target.value
-        setCustom(custom)
-        switch (auxiliar) {
-            case 'focus':
-                setFocus(custom[auxiliar])
-                break;
-            case 'break':
-                setRecreo(custom[auxiliar])
-                break;
-            case 'breakLong':
-                setBreakLong(custom[auxiliar])
-                break;
-            
-                default:
-                break;
-        }
-        dispatch(setValues({focus,recreo,breakLong}))
-    }
-
-    
     return(
         <div className="bg-white h-max w-full flex flex-col p-6">
             <div className="flex">
@@ -78,7 +89,7 @@ export default function ModalConcentracion({back}){
             <form className="flex flex-col">
                 <div className="w-full flex my-3">
                     <label>
-                        <input defaultChecked onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'bebe'} />
+                        <input onChange={() => (1)} checked={bebe} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'bebe'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.baby")}</p>
@@ -87,7 +98,7 @@ export default function ModalConcentracion({back}){
                 </div>
                 <div className="w-full flex mb-3">
                     <label>
-                        <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'popular'} />
+                        <input onChange={() => (1)} checked={popular} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'popular'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.popular")}</p>
@@ -96,7 +107,7 @@ export default function ModalConcentracion({back}){
                 </div>
                 <div className="w-full flex mb-3">
                     <label>
-                        <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'medio'} />
+                        <input onChange={() => (1)} checked={medio} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'medio'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.midle")}</p>
@@ -105,14 +116,21 @@ export default function ModalConcentracion({back}){
                 </div>
                 <div className="w-full flex mb-3">
                     <label>
-                        <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'extendido'} />
+                        <input onChange={() => (1)} checked={extendido} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'extendido'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.extended")}</p>
                             <p className="text-slate-400">60 min  *  10 min  *  25min</p>
                         </div>
                 </div>
-                <div className="w-full flex mb-3">
+            </form>
+        </div>
+    )
+}
+
+
+/**
+ *               <div className="w-full flex mb-3">
                     <label>
                         <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'personalizado'} />
                     </label>
@@ -143,7 +161,4 @@ export default function ModalConcentracion({back}){
                             </section>
                         </div>
                 </div>
-            </form>
-        </div>
-    )
-}
+ */

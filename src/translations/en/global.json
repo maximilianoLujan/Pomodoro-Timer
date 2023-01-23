@@ -31,7 +31,8 @@
     "clock":{
         "challenge":"Why don't you take the challenge",
         "level":"level",
-        "start":"start"
+        "start":"start",
+        "stop":"Stop"
     },
     "todos":{
         "task":"Tasks",
