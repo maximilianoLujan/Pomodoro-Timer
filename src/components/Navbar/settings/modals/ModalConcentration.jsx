@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setValues } from "../../../../features/config/configSlice";
 
-export default function ModalConcentracion({back}){
+export default function ModalConcentracion({back , bebe , medio, popular, extendido ,changeChecked}){
     const dispatch = useDispatch()
     const [t,i18n] = useTranslation("global")
     const [concentration,setConcentration] = useState('')
+
+
 /**
  *     const [isCustomize,setIsCustomize] = useState(false) 
     const [custom,setCustom] = useState({
@@ -16,16 +18,17 @@ export default function ModalConcentracion({back}){
         recreo:50,
         breakLong:50
     })
- */
     const [focus,setFocus] = useState(50)
     const [recreo,setRecreo] = useState(50)
     const [breakLong,setBreakLong] = useState(50)
+ */
 
 
 
     //Manejamos el estado de los inputs radio
     const handleClickRadio = (e) => {
         setConcentration(e.target.value)
+        changeChecked(e.target.value)
         if (e.target.value == 'personalizado'){
             //setIsCustomize(true)
         } else{
@@ -36,12 +39,15 @@ export default function ModalConcentracion({back}){
                     break;
                 case 'popular':
                     dispatch(setValues({nivel:'Popular',focus:20,recreo:5,breakLong:15}))
+
                     break;
                 case 'medio':
                     dispatch(setValues({nivel:'Medio',focus:40,recreo:8,breakLong:20}))
+
                     break;
                 case 'extendido':
                     dispatch(setValues({nivel:'Extendido',focus:60,recreo:10,breakLong:25}))
+
                 default:
                     break;
             }
@@ -74,7 +80,6 @@ export default function ModalConcentracion({back}){
  *  
  */
 
-    
     return(
         <div className="bg-white h-max w-full flex flex-col p-6">
             <div className="flex">
@@ -84,7 +89,7 @@ export default function ModalConcentracion({back}){
             <form className="flex flex-col">
                 <div className="w-full flex my-3">
                     <label>
-                        <input defaultChecked onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'bebe'} />
+                        <input onChange={() => (1)} checked={bebe} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'bebe'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.baby")}</p>
@@ -93,7 +98,7 @@ export default function ModalConcentracion({back}){
                 </div>
                 <div className="w-full flex mb-3">
                     <label>
-                        <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'popular'} />
+                        <input onChange={() => (1)} checked={popular} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'popular'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.popular")}</p>
@@ -102,7 +107,7 @@ export default function ModalConcentracion({back}){
                 </div>
                 <div className="w-full flex mb-3">
                     <label>
-                        <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'medio'} />
+                        <input onChange={() => (1)} checked={medio} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'medio'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.midle")}</p>
@@ -111,7 +116,7 @@ export default function ModalConcentracion({back}){
                 </div>
                 <div className="w-full flex mb-3">
                     <label>
-                        <input onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'extendido'} />
+                        <input onChange={() => (1)} checked={extendido} onClick={handleClickRadio} className="w-6 scale-150 mr-4" type="radio" name="concentracion" value={'extendido'} />
                     </label>
                         <div>
                             <p className="font-bold">{t("modals.concentration.extended")}</p>

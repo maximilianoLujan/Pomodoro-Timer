@@ -4,6 +4,7 @@ export const configSlice = createSlice({
   name: 'config',
   initialState: {
     value: {
+        nivel:'paso de bebe',
         focus:10,
         recreo:5,
         breakLong:10
