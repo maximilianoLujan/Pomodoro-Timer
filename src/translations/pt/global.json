@@ -43,5 +43,12 @@
         "hide":"Ocultar tarefas concluidas",
         "trash":"Remover tarefas para completar",
         "trashdone":"Remover tarefas concluidas"
+    },
+    "challenges":{
+        "text1":"Com Pomodoro Timer Online, você alcançará seus objetivos mantendo-se focado e indolor no processo.",
+        "text2":"Com Música de Fundo",
+        "text3":"Tempo Personalizado",
+        "text4":"Lista de Tarefas Pendentes",
+        "text5":"e Notificações"
     }
 }
