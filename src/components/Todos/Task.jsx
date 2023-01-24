@@ -98,7 +98,7 @@ function TaskList(){
                             <input onClick={() => markTask(el.id)} onChange={() => console.log("")} checked={el.done} type="radio" name={`${el.id}Check`} className="scale-150 mr-4"/>
                             <p className={el.done?'text-slate-500 line-through':''}>{el.taskName}</p>
                         </div>    
-                        <div className="w-full h-full flex items-center justify-end absolute right-1">
+                        <div className="h-full flex items-center justify-end absolute right-1">
                             <DeleteIcon className="mr-4" onClick={() => handleClickDeleteTask(el.id , el.taskName)}/>
                             <EditIcon onClick={() => setEditTask(el.id)}/>
                         </div>

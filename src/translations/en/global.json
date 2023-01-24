@@ -44,5 +44,12 @@
         "show":"Show completed task",
         "trash":"Remove to do list",
         "trashdone":"Remove done list"
+    },
+    "challenges":{
+        "text1":"With Pomodoro Timer Online, you will achieve your goals by staying focused and painless in the process.",
+        "text2":"With Background Music",
+        "text3":"Custom Timer",
+        "text4":"To Do List",
+        "text5":"and Desktop Notifications"
     }
 }

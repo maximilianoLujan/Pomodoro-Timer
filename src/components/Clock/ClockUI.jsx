@@ -12,21 +12,21 @@ export default function ClockUI(props){
     if (pomodoro) return(
         <div className="flex flex-col">
             <div className="mb-4">
-                <CounterClock bg='#2563EB' time={value.focus} increase={props.increase} name={value.nivel} concentration={'focus'}/> 
+                <CounterClock bg='#2563EB' offActive={props.offActive} setActive={props.setActive} time={value.focus} increase={props.increase} name={value.nivel} concentration={'focus'}/> 
             </div>
         </div>
     )
     if (rest) return(
         <div className="flex flex-col">
             <div className="mb-4">
-               <CounterClock bg='#059669' time={value.recreo} increase={props.increase}  name={value.nivel} concentration={'recreo'}/> 
+               <CounterClock bg='#059669' offActive={props.offActive} setActive={props.setActive} time={value.recreo} increase={props.increase}  name={value.nivel} concentration={'recreo'}/> 
             </div>
         </div>
     )
     if (longRest) return(
         <div className="flex flex-col">
             <div className="mb-4">
-                <CounterClock bg='#059669' time={value.breakLong} increase={props.increase} name={value.nivel} concentration={'breakLong'}/> 
+                <CounterClock bg='#059669' offActive={props.offActive} setActive={props.setActive} time={value.breakLong} increase={props.increase} name={value.nivel} concentration={'breakLong'}/> 
             </div>
         </div>
     )

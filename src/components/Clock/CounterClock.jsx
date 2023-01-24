@@ -2,27 +2,31 @@ import { useState , useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 
+const DASH = 1100
 
-
-export default function CounterClock({ bg , time , name , increase, concentration}){
+export default function CounterClock({ bg , time , name , increase, concentration , setActive , offActive}){
     const value = useSelector(state => state.config.value)
     const [t] = useTranslation("global")
     const [running,setRunning] = useState(false)
     const [interv,setInterv] = useState()
     const [minuts,setMinuts] = useState()
     const [seconds,setSeconds] = useState(0)
-
+    const [dash,setDash] = useState(DASH)
 
     useEffect(() => {
         setMinuts(value.focus)
     },[])
 
     const handleClickStart = () => {
+        setActive(concentration)
         setRunning(true)
         let minuts = time
         let seconds = 0
         setMinuts(minuts)
         const cont = setInterval(() => {
+            const currentTime = minuts * 60 + seconds,
+                porcentaje = (currentTime * 100) / (time *60),
+                dash = (DASH * porcentaje) / 100
             if (seconds == 0 && minuts == 0){
                 increase(name)
                 handleClickStop()
@@ -37,18 +41,20 @@ export default function CounterClock({ bg , time , name , increase, concentratio
                 setSeconds(seconds)
             }
             setMinuts(minuts)
+            setDash(dash)
         },1000)
         setInterv(cont)
     }
 
 
     const handleClickStop = () => {
+        setDash(DASH)
+        offActive()
         setRunning(false)
         const cont = interv
         clearInterval(cont)
         setMinuts(value.focus)
         setSeconds(0)
-        increase(concentration)
     }
     return(
         <div className="flex flex-col">
@@ -63,10 +69,10 @@ export default function CounterClock({ bg , time , name , increase, concentratio
                             boxShadow:'inset 4px 4px 6px -1px rgba(0,0,0,0.2),inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05)'}}>
                             <div className="flex flex-col items-center"> 
                                 {running
-                                ?<p className="font-light tracking-wide text-7xl flex" style={{color:bg}}>
+                                ?<p className="font-bold tracking-wide text-7xl flex" style={{color:bg}}>
                                     {minuts <= 9?`0${minuts}`:minuts}:{seconds <= 9?`0${seconds}`:seconds}
                                 </p>
-                                :<p className="font-light tracking-wide text-7xl flex" style={{color:bg}}>
+                                :<p className="font-bold tracking-wide text-7xl flex" style={{color:bg}}>
                                     {time <= 9?`0${time}`:time}:{seconds <= 9?`0${seconds}`:seconds}
                                 </p>}
                                 <div className="flex flex-col items-center mt-4">
@@ -88,20 +94,22 @@ export default function CounterClock({ bg , time , name , increase, concentratio
                         <stop offset="100%" stopColor="#673ab7" />
                     </linearGradient>
                 </defs>
-                <circle className="fill-none stroke-blue-600 hidden lg:block" cx="192px" cy="192px" r="175px"
+                <circle id="circlereloj" className="fill-none hidden lg:block" cx="192px" cy="192px" r="175px"
                 strokeLinecap="round"
                 style={{
+                    stroke:bg,                               
                     strokeWidth:'35px',
                     strokeDasharray:'1100',
-                    strokeDashoffset:'1100'
+                    strokeDashoffset:dash
                 }} 
                 />
-                <circle className="fill-none stroke-blue-600 lg:hidden" cx="120px" cy="120px" r="115px"
+                <circle className="fill-none lg:hidden" cx="120px" cy="120px" r="115px"
                 strokeLinecap="round"
                 style={{
+                    stroke:bg,
                     strokeWidth:'10px',
                     strokeDasharray:'1100',
-                    strokeDashoffset:'1100'
+                    strokeDashoffset:dash
                 }} 
                 />
                 </svg>
