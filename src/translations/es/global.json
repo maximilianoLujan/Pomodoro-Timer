@@ -51,5 +51,35 @@
         "text3":"Tiempo Personalizado",
         "text4":"Lista de Tareas",
         "text5":"y Notificaciones de Escritorio"
+    },
+    "whatis":{
+        "question":"¿Qué es la Técnica Pomodoro?",
+        "whatis":"La Técnica Pomodoro es un método de administración del tiempo para incrementar tu productividad.",
+        "how":"Se usa un temporizador para dividir el tiempo en intervalos llamados ",
+        "wordone":"pomodoros ",
+        "and":"y ",
+        "wordtwo":"descansos.",
+        "grey":"La duración de cada intervalo depende de tu nivel de enfoque pero suele ser de 25 minutos para los pomodoros y 5 minutos para los descansos.",
+        "howiuse":"¿Como Usarla?"
+    },
+    "whouse":{
+        "title":"¿Quienes usan la Técnica Pomodoro?",
+        "who":"La Técnica Pomodoro es usada por personas que necesitan concentrarse en sus actividades para lograr ciertos objetivos.",
+        "whotwo":" Es probable que muchos de tus ",
+        "wordone":"YouTubers, ",
+        "wordtwo":"influencers ",
+        "and":"y ",
+        "wordthree":"empresarios ",
+        "whothree":"favoritos usen esta técnica para ser más productivos.",
+        "advice":"Si sientes que te distraes con facilidad y procrastinas, este puede ser tu antídoto."
+    },
+    "cience": {
+        "title":"La ciencia detrás de la Técnica Pomodoro",
+        "cienceword":"El ",
+        "ciencewordtwo":"intervalo de atención ",
+        "ciencewordthree":"es la capacidad de concentrarnos en una sola tarea, mientras mayor sea nuestra concentración, más fácil se nos hará realizarla.",
+        "ciencewordfour":"Estudios han estimado que este intervalo dura 20 minutos aproximadamente.",
+        "ciencewordfive":"Es natural distraerse en busca de nueva información, pero también ",
+        "ciencewordsix":"es posible concentrarse nuevamente refrescando el intervalo de atención. (Estudio) "
     }
 }

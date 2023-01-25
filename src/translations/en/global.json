@@ -51,5 +51,35 @@
         "text3":"Custom Timer",
         "text4":"To Do List",
         "text5":"and Desktop Notifications"
+    },
+    "whatis":{
+        "question":"¿What is the pomodore Technique?",
+        "whatis":"The Pomodoro Technique is a time management method to increase your productivity.",
+        "how":"A timer is used to divide the time into intervals called ",
+        "wordone":"pomodores ",
+        "and":"and ",
+        "wordtwo":"breaks.",
+        "grey":"The duration of each interval depends on your level of focus but is usually 25 minutes for pomodoros and 5 minutes for breaks.",
+        "howiuse":"¿How to use it?"
+    },
+    "whouse":{
+        "title":"¿How uses the Pomodoo Technique?",
+        "who":"The Pomodoro Technique is used by people who need to focus on their activities to achieve certain goals. ",
+        "whotwo":"Many of your favorite",
+        "wordone":"YouTubers, ",
+        "wordtwo":"influencers ",
+        "and":"and ",
+        "wordthree":"entrepreneurs ",
+        "whothree":"are likely to use this technique to be more productive.",
+        "advice":"If you find yourself easily distracted and procrastinating, this may be your antidote. "
+    },
+    "cience": {
+        "title":"The science behind the Pomodoro Technique",
+        "cienceword":"The ",
+        "ciencewordtwo":"attention span ",
+        "ciencewordthree":"is the ability to concentrate on a single task, the greater our concentration, the easier it will be for us to do it.",
+        "ciencewordfour":"Studies have estimated that this interval lasts approximately 20 minutes.",       
+        "ciencewordfive":"It is natural to be distracted in search of new information, but ",
+        "ciencewordsix":"it is also possible to focus again by refreshing the attention span. (Study) "
     }
 }
