@@ -6,7 +6,7 @@ export default function Challenges(){
     
     
     return(
-        <div className="flex w-full flex-col md:flex-row md:w-3/4 mt-16">
+        <div className="flex w-full flex-col md:flex-row md:w-3/4 mb-80">
             <h2 className="flex flex-col font-bold text-3xl text-center md:text-left">
                 <span className="mb-2">{t("challenges.text1")}</span>
                 <span className="mb-2 text-secondary">🎵 {t("challenges.text2")},</span>
