@@ -5,7 +5,7 @@ import Challenges from './components/Challenges/Challenges'
 import WhatIsPomodore from "./components/WhatIs/WhatIsPomodore"
 import WhoUse from './components/whouse/WhoUse'
 import Cience from './components/Cience/Cience'
-
+import Ask from './components/Ask/Ask'
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
       <WhatIsPomodore />
       <WhoUse />
       <Cience /> 
+      <Ask />
     </div>
     
   )

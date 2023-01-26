@@ -81,5 +81,45 @@
         "ciencewordfour":"Estudios han estimado que este intervalo dura 20 minutos aproximadamente.",
         "ciencewordfive":"Es natural distraerse en busca de nueva información, pero también ",
         "ciencewordsix":"es posible concentrarse nuevamente refrescando el intervalo de atención. (Estudio) "
+    },
+    "ask":{
+        "title":"Preguntas más frecuentes",
+        "flip":{
+            "title":"¿Cómo usar la Técnica Pomodoro?",
+            "infoone":"En esencia estos son los pasos pero considera que los tiempos pueden cambiar y que la app te ayuda en el proceso de adopción.",
+            "flipone":"Haz una lista de tareas pendientes y prepara un temporizador.",
+            "fliptwo":"Configure el temporizador en 25 minutos y concéntrate en una tarea hasta que suene el temporizador.",
+            "flipthree":"Al completar la sesión, marque un pomodoro y registra lo que completó.",
+            "flipfour":"Tómate un descanso de 5 minutos para refrescar tu concentración.",
+            "flipfive":"Después de 4 pomodoros, toma un descanso largo de 15 minutos."
+        },
+        "fliptwo":{
+            "title":"¿Qué hacer durante los descansos de pomodoro?",
+            "infoone":"Procura que sean actividades que no te agoten mentalmente. Aquí tienes ",
+            "wordone":"7 ideas para tus descansos:",
+            "flipone":"Haz una pequeña rutina de estiramiento.",
+            "fliptwo":"Sal a tomar un poco de sol.",
+            "flipthree":"Escucha una de tus canciones favoritas.",
+            "flipfour":"Prepárate una bebida.",
+            "flipfive":"Come una fruta.",
+            "flipsix":"Haz ejercicios de respiración.",
+            "flipseven":"Organiza tu escritorio."
+        },
+        "flipthree":{
+            "title":"¿Se puede instalar en Windows, Mac, Android o Pc?",
+            "infoone":"¡Sí! se puede descargar y usar como una app nativa mediante navegadores Chrome, Firefox y Safari agregándola a la pantalla de inicio en smartphones y desde la barra de búsqueda en Pc o Desktop (mediante el ícono de instalar)."
+        },
+        "flipfour":{
+            "title":"¿Puedo obtener más características?",
+            "infoone":"¡Sí! En aras de la simplicidad, hemos tratado de mantener lo básico además de estas características atractivas:",
+            "flipone":"Música de fondo con control de volumen.",
+            "fliptwo":"Tiempos predeterminados y personalizados.",
+            "flipthree":"Contadores y reinicio de sesiones de trabajo.",
+            "flipfour":"Control de inicios automáticos.",
+            "flipfive":"Si necesitas más características como control de tareas y sus tiempos, equipos, proyectos, etc.",
+            "show":"Visita nuestra version completa",
+            "hide":"Nos alegra saber que estás interesado, estamos preparando nuestra versión completa para que seas productivo como jugando. ¡Ten un gran día!"
+        },
+        "inspired":"* Esta web app fue inpirada en la técnica desarrollada por Francesco Cirillo."
     }
 }
