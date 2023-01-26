@@ -1,11 +1,13 @@
 import { useState , useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
+import { Howl } from "howler"
 
 const DASH = 1100
 
 export default function CounterClock({ bg , time , name , increase, concentration , setActive , offActive}){
     const value = useSelector(state => state.config.value)
+    const valueAlarm = useSelector(state => state.alarm.value)
     const [t] = useTranslation("global")
     const [running,setRunning] = useState(false)
     const [interv,setInterv] = useState()
@@ -48,6 +50,7 @@ export default function CounterClock({ bg , time , name , increase, concentratio
 
 
     const handleClickStop = () => {
+        soundAlarm(valueAlarm)
         setDash(DASH)
         offActive()
         setRunning(false)
@@ -122,4 +125,22 @@ export default function CounterClock({ bg , time , name , increase, concentratio
             }
         </div>
     )
+}
+
+
+
+
+function soundAlarm(sound){
+    const soundHowl = new Howl({
+        src: [sound.src],
+        volume: sound.volume / 100
+    });
+
+
+    soundHowl.play()
+
+
+    setTimeout(() => {
+        soundHowl.stop()
+    }, 2000);
 }

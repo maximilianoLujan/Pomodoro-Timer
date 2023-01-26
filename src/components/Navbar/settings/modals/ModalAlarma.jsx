@@ -1,22 +1,72 @@
 import { useTranslation } from "react-i18next"
-import { Switch } from "@mui/material"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import { useState } from "react";
+import { Howl } from "howler"; 
+import { useDispatch } from "react-redux";
+import { setConfigAlarm } from "../../../../features/configAlarm/configAlarm";
 
+
+const sounds = [{
+    id:1,
+    name:'nextel',
+    sound:'sounds/nextel.mp3',
+},
+{
+    id:2,
+    name:'phone',
+    sound:'sounds/phone.mp3',
+},
+{
+    id:3,
+    name:'xperia',
+    sound:'sounds/xperia.mp3',
+}]
 
 export default function ModalAlarma({back}){
-    const [t,i18n] = useTranslation("global")
-    const [sound,setSound] = useState({})
+    const [t] = useTranslation("global")
     const [volumen,setVolumen] = useState(50)
+    const [sound,setSound] = useState()
+    const dispatch = useDispatch()
+
+
     const handleClickSound = (sonido) =>    {
-        setSound({...sound,sonido})
-    }
-    const handleChangeRange = (e) => {
-        setSound({...sound,volumen:e.target.value})
-        setVolumen(e.target.value)
+        setSound(sonido)
+        const soundHowl = new Howl({
+            src: [sonido.sound],
+            volume: volumen / 100 
+        });
+        setTimeout(() => {
+            soundHowl.stop()
+        }, 3000);
+        soundHowl.play()
+        dispatch(setConfigAlarm({sonido,volumen}))
+
     }
 
+    const handleChangeRange = (e) => {
+        setVolumen(e.target.value)
+        const sonido = {
+            sound:sound
+        }
+        dispatch(setConfigAlarm({sonido,volumen}))
+    }
+
+    const handleClickRange = (e) => {
+        setVolumen(e.target.value)
+        const sonido = {
+            sound:sound
+        }
+        dispatch(setConfigAlarm({sonido,volumen}))
+    }
+
+    const handleClickMute = () => {
+        const sonido = {
+            sound: ''
+        }
+        setVolumen(0)
+        dispatch(setConfigAlarm({sonido,volumen}))
+    }
 
 
     return(
@@ -30,11 +80,9 @@ export default function ModalAlarma({back}){
                     {t("modals.alarm")}
                 </p>
                 <div className="flex border-slate-400  border-2 border-solid w-full justify-evenly rounded">
-                    <button onClick={() => handleClickSound('sound')} className="w-full border-r-2 p-2 focus:bg-blue-600 text-xs">Sound</button>
-                    <button onClick={() => handleClickSound('sound 2')} className="w-full border-r-2 p-2 focus:bg-blue-600 text-xs">Sound 2</button>
-                    <button onClick={() => handleClickSound('long')} className="w-full border-r-2 p-2 focus:bg-blue-600 text-xs">Long</button>
-                    <button onClick={() => handleClickSound('mute')} className="w-full p-2 focus:bg-blue-600 text-xs">
-                        <VolumeMuteIcon />
+                    {sounds.map(sound => <button key={sound.id} onClick={() => handleClickSound(sound)} className='w-full border-r-2 p-2 focus:bg-blue-600 text-xs'>{sound.name}</button>)}
+                    <button onClick={() => handleClickMute()} className="w-full p-2 focus:bg-blue-600 text-xs">
+                        <VolumeOffIcon />
                     </button>
                 </div>
             </div>
@@ -43,7 +91,7 @@ export default function ModalAlarma({back}){
                     <p className="font-bold">VOLUMEN</p>
                     <p className="font-bold">{volumen}%</p>
                 </div>
-                <input defaultValue={50} onChange={handleChangeRange} className="w-full" type="range" name="range" />
+                <input value={volumen} onClick={handleClickRange} onChange={handleChangeRange} className="w-full" type="range" name="range" />
             </div>
         </div>
     )
