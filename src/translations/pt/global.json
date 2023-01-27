@@ -119,6 +119,9 @@
             "show":"",
             "hide":"Estamos felizes em saber que você está interessado, estamos preparando nossa versão completa para que você possa ser produtivo enquanto joga. tenha um bom dia! "
         },
-        "inspired":"* Este aplicativo da web foi inspirado na técnica desenvolvida por Francesco Cirillo."
+        "inspired":"* Este aplicativo da web foi inspirado na ",
+        "technique":"técnica",
+        "developed":" desenvolvida por ",
+        "newinfo":"Estamos felizes em saber que você está interessado, estamos preparando nossa versão completa para que você possa ser produtivo enquanto joga. tenha um bom dia!"
     }
 }

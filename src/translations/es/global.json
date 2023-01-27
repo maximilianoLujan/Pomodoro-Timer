@@ -120,6 +120,9 @@
             "show":"Visita nuestra version completa",
             "hide":"Nos alegra saber que estás interesado, estamos preparando nuestra versión completa para que seas productivo como jugando. ¡Ten un gran día!"
         },
-        "inspired":"* Esta web app fue inpirada en la técnica desarrollada por Francesco Cirillo."
+        "inspired":"* Esta web app fue inpirada en la ",
+        "technique":"tecnica",
+        "developed":" desarrollada por ",
+        "newinfo":"Nos alegra saber que estás interesado, estamos preparando nuestra versión completa para que seas productivo como jugando. ¡Ten un gran día!" 
     }
 }

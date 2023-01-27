@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import IndividualTask from "./IndividualTask";
 
 export default function Task(props){
     const [addTask,setAddTask] =useState(false)
@@ -19,6 +20,8 @@ export default function Task(props){
         cancelEditTask,
         updateTodo,
         deleteTask} = props
+
+
 
     const handleClick = () => {
         setAddTask(!addTask)
@@ -66,6 +69,7 @@ export default function Task(props){
 
 function TaskList(){
     const [newTaskName,setNewTaskName] = useState('')
+    const [options,setOptions] = useState(false)
 
     const handleClickSaveChanges = (id) => {
         if (!newTaskName) return
@@ -73,16 +77,51 @@ function TaskList(){
         cancelEditTask()
     }
 
+    const handleMouseOver = (e) => {
+        setOptions(true)
+    } 
+    const handleMouseOut = (e) => {
+        setOptions(false)
+    }
+
     const handleClickDeleteTask = (id,name) =>{
         const eliminar = confirm(`You want to delete the task with the name ${name}`)
         eliminar ? deleteTask(id):null
     }
-
     if (!realizadas){
         return(
             <>
-                {todo.map(el => 
-                <div key={el.id} className={"flex relative items-center mb-2 p-6 border-2 border-black/30 rounded-md cursor-pointer justify-between"}>
+            {todo.map(el => 
+            <div key={el.id} className={"flex items-center  mb-2  border-2 border-black/30 rounded-md cursor-pointer justify-between"}>
+                {el.edit 
+                ?           
+                <div className="flex flex-col w-full p-6">
+                    <input onChange={(e) => setNewTaskName(e.target.value)} placeholder={el.taskName} type="text" name="task" className="mb-4 border-0 outline-0" />
+                    <div className="flex ">
+                        <button onClick={() => handleClickSaveChanges(el.id)} className="bg-primary/90 text-neutral-200 py-2 px-6 rounded-md hover:bg-primary" >{t("todos.button1")}</button>
+                        <button onClick={() => cancelEditTask()} className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary">{t("todos.button2")}</button>
+                    </div>
+                </div>                            
+                :
+                <div className="relative w-full">
+                    <div onMouseOut={handleMouseOut} onMouseOver={handleMouseOver} className="flex items-center justify-start p-6 relative z-30">
+                        <input onClick={() => markTask(el.id)} onChange={() => console.log("")} checked={el.done} type="radio" name={`${el.id}Check`} className="scale-150 mr-4"/>
+                        <div style={{wordWrap:'break-word',wordBreak: 'break-word'}}>
+                            <p className={el.done?'text-slate-500 line-through w-full':'w-full'}>{el.taskName}</p>
+                        </div>
+                    </div>    
+                    <IndividualTask handleMouseOut={handleMouseOut} handleMouseOver={handleMouseOver} task={el} setEditTask={setEditTask} handleClickDeleteTask={handleClickDeleteTask} options={options}/>
+                </div>
+                }
+            </div>
+            )}
+        </>
+        )
+    } else {
+            <>
+            {todo.map(el => {
+                el.done &&
+                <div key={el.id} className={"flex items-center mb-2 p-6 border-2 border-black/30 rounded-md cursor-pointer justify-between"}>
                     {el.edit 
                     ?           
                     <div className="flex flex-col">
@@ -98,46 +137,15 @@ function TaskList(){
                             <input onClick={() => markTask(el.id)} onChange={() => console.log("")} checked={el.done} type="radio" name={`${el.id}Check`} className="scale-150 mr-4"/>
                             <p className={el.done?'text-slate-500 line-through':''}>{el.taskName}</p>
                         </div>    
-                        <div className="h-full flex items-center justify-end absolute right-1">
-                            <DeleteIcon className="mr-4" onClick={() => handleClickDeleteTask(el.id , el.taskName)}/>
+                        <div className="flex items-center relative">
+                            <DeleteIcon onClick={() => handleClickDeleteTask(el.id , el.taskName)} className="mr-4"/>
                             <EditIcon onClick={() => setEditTask(el.id)}/>
                         </div>
                     </>
                     }
                 </div>
-                )}
+            })}
             </>
-        )
-    } else {
-        {todo.map(el => {
-            el.done
-            ?null
-            :
-            <div key={el.id} className={"flex items-center mb-2 p-6 border-2 border-black/30 rounded-md cursor-pointer justify-between"}>
-            {el.edit 
-            ?           
-            <div className="flex flex-col">
-                <input onChange={(e) => setNewTaskName(e.target.value)} placeholder={el.taskName} type="text" name="task" className="mb-4 border-0 outline-0" />
-                <div className="flex">
-                    <button onClick={() => handleClickSaveChanges(el.id)} className="bg-primary/90 text-neutral-200 py-2 px-6 rounded-md hover:bg-primary" >{t("todos.button1")}</button>
-                    <button onClick={() => cancelEditTask()} className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary">{t("todos.button2")}</button>
-                </div>
-            </div>                            
-            :
-            <>
-                <div className="flex items-center justify-center">
-                    <input onClick={() => markTask(el.id)} onChange={() => console.log("")} checked={el.done} type="radio" name={`${el.id}Check`} className="scale-150 mr-4"/>
-                    <p className={el.done?'text-slate-500 line-through':''}>{el.taskName}</p>
-                </div>    
-                <div className="flex items-center relative">
-                    <DeleteIcon onClick={() => handleClickDeleteTask(el.id , el.taskName)} className="mr-4"/>
-                    <EditIcon onClick={() => setEditTask(el.id)}/>
-                </div>
-            </>
-            }
-        </div>
-        })}
-    }
-
+        }
     }
 }
