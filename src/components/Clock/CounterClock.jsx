@@ -31,6 +31,7 @@ export default function CounterClock({ bg , time , name , increase, concentratio
                 dash = (DASH * porcentaje) / 100
             if (seconds == 0 && minuts == 0){
                 increase(name)
+                soundAlarm(valueAlarm)
                 handleClickStop()
                 return
             }
@@ -50,7 +51,6 @@ export default function CounterClock({ bg , time , name , increase, concentratio
 
 
     const handleClickStop = () => {
-        soundAlarm(valueAlarm)
         setDash(DASH)
         offActive()
         setRunning(false)

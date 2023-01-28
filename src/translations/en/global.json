@@ -81,5 +81,48 @@
         "ciencewordfour":"Studies have estimated that this interval lasts approximately 20 minutes.",       
         "ciencewordfive":"It is natural to be distracted in search of new information, but ",
         "ciencewordsix":"it is also possible to focus again by refreshing the attention span. (Study) "
+    },
+    "ask":{
+        "title":"Frequently asked questions",
+        "flip":{
+            "title":"How to use the Pomodoro Technique?",
+            "infoone":"In essence these are the steps but consider that times can change and the app helps you in the adoption process.",
+            "flipone":"Make a to-do list and get a timer.",
+            "fliptwo":"Set the timer for 20 or 25 minutes and focus on one task until the alarm goes off.",
+            "flipthree":"Upon completion of the session, check off a pomodoro and record what you completed.",
+            "flipfour":"Take a 5 minute break to refresh your concentration.",
+            "flipfive":"After 4 pomodoros, take a long 15-minute break."
+        },
+        "fliptwo":{
+            "title":"What to do during pomodoro breaks?",
+            "infoone":"Make sure they are activities that do not exhaust you mentally. Here are ",
+            "wordone":"7 ideas for your breaks:",
+            "flipone":"Do a little stretching routine.",
+            "fliptwo":"Get out and sunbathe.",
+            "flipthree":"Listen to one of your favorite songs.",
+            "flipfour":"Make yourself a drink.",
+            "flipfive":"Eat a fruit.",
+            "flipsix":"Do breathing exercises.",
+            "flipseven":"Organize your desk."
+        },
+        "flipthree":{
+            "title":"Can it be installed on Windows, Mac, Android or PC?",
+            "infoone":"Yes! It can be downloaded and used as a native app with Chrome, Firefox and Safari browsers by adding it to the home screen on smartphones and from the search bar on PC or Desktop (using the install icon)."
+        },
+        "flipfour":{
+            "title":"Can I get more features?",
+            "infoone":"Yes! For the sake of simplicity, we've tried to keep the basics in addition to these cool features:",
+            "flipone":"Background music with volume control.",
+            "fliptwo":"Default and custom times.",
+            "flipthree":"Challenges and prizes.",
+            "flipfour":"Control of automatic starts.",
+            "flipfive":"If you need more features such as control of tasks and their times, teams, projects, etc.",
+            "show":"Visit our full version",
+            "hide":"We are glad to know that you are interested, we are preparing our full version so you can be productive like playing. Have a nice day! "
+        },
+        "inspired":"* This web app was inspired by the ",
+        "technique":"technique",
+        "developed":" developed by ",
+        "newinfo":"We are glad to know that you are interested, we are preparing our full version so you can be productive like playing. Have a nice day!"
     }
 }

@@ -80,5 +80,48 @@
         "ciencewordfour":"Estudos estimam que esse intervalo dura aproximadamente 20 minutos.",
         "ciencewordfive":"É natural se distrair em busca de novas informações, mas também",
         "ciencewordsix":" é possível se concentrar novamente, atualizando o intervalo de atenção. (Estudo) "
+    },
+    "ask":{
+        "title":"Perguntas mais frequentes",
+        "flip":{
+            "title":"Como usar a Técnica Pomodoro?",
+            "infoone":"Em essência, essas são as etapas, mas considere que os tempos podem mudar e que o aplicativo ajuda você no processo de adoção.",
+            "flipone":"Faça uma lista de tarefas e defina um cronômetro.",
+            "fliptwo":"Defina o cronômetro para 25 minutos e concentre-se em uma tarefa até o alarme tocar.",
+            "flipthree":"Após a conclusão da sessão, marque um pomodoro e registre o que você completou.",
+            "flipfour":"Faça uma pausa de 5 minutos para refrescar sua concentração.",
+            "flipfive":"Depois de 4 pomodoros, faça um longo descanso de 15 minutos."
+        },
+        "fliptwo":{
+            "title":"O que fazer durante um longo descanso do Pomodoro?",
+            "infoone":"Certifique-se de que são atividades que não o esgotam mentalmente. Aqui estão ",
+            "wordone":"7 ideias para seus descansos:",
+            "flipone":"Faça uma pequena rotina de alongamento.",
+            "fliptwo":"Saia e pegue um pouco de sol.",
+            "flipthree":"Ouça uma de suas músicas favoritas.",
+            "flipfour":"Faça uma bebida",
+            "flipfive":"Coma uma fruta.",
+            "flipsix":"Faça exercícios de respiração.",
+            "flipseven":"Organize sua mesa."
+        },
+        "flipthree":{
+            "title":"Ele pode ser instalado no Windows, Mac, Android ou PC?",
+            "infoone":"Sim! pode ser baixado e usado como um aplicativo nativo através dos navegadores Chrome, Firefox e Safari, adicionando-o à tela inicial dos smartphones e da barra de pesquisa no PC ou Desktop (usando o ícone de instalação)."
+        },
+        "flipfour":{
+            "title":"Posso obter mais recursos?",
+            "infoone":"Sim! Por uma questão de simplicidade, tentamos manter o básico, além desses recursos interessantes:",
+            "flipone":"Música de fundo com controle de volume.",
+            "fliptwo":"Tempos padrão e personalizados.",
+            "flipthree":"Contador e reinício das sessões de trabalho.",
+            "flipfour":"Controle de começos automáticos.",
+            "flipfive":"Se precisar de mais recursos como controle de tarefas e seus tempos, equipes, projetos, etc.",
+            "show":"",
+            "hide":"Estamos felizes em saber que você está interessado, estamos preparando nossa versão completa para que você possa ser produtivo enquanto joga. tenha um bom dia! "
+        },
+        "inspired":"* Este aplicativo da web foi inspirado na ",
+        "technique":"técnica",
+        "developed":" desenvolvida por ",
+        "newinfo":"Estamos felizes em saber que você está interessado, estamos preparando nossa versão completa para que você possa ser produtivo enquanto joga. tenha um bom dia!"
     }
 }

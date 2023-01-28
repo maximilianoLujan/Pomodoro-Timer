@@ -81,24 +81,24 @@ export default function Clock(){
     }
 
     return(
-        <div className="w-full lg:w-3/4 flex flex-col items-center lg:border-r-2">
+        <div className="w-full lg:w-5/6 flex flex-col items-center lg:border-r-2">
             <h2 className='font-bold text-xl'>¿{t("clock.challenge")}? 😒</h2>
-            <div className='flex mt-10 w-full justify-evenly mb-10'>
+            <div className='flex mt-10 w-full justify-center mb-10'>
                 <div className={pomodoro.active?'border-b-2 border-black':''}>
                     <button disabled={!pomodoro.active && running} className={running && !pomodoro.active?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 items-center cursor-not-allowed opacity-50':' flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 items-center'} onClick={(e) => handleClickPomodoro(e.target)}>
-                        <p className='text-center md:mr-4'>{t("modals.concentration.pomodoro")}</p>
+                        <p className='text-center text-base md:text-xl sm:mr-4'>{t("modals.concentration.pomodoro")}</p>
                         <p className='font-black'>{pomodoro.time}</p>
                     </button>
                 </div>
                 <div className={rest.active?'border-b-2 border-black':''}>
                     <button disabled={!rest.active && running} className={!rest.active && running?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-secondary/10  items-center cursor-not-allowed opacity-50':' flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-primary/10 items-center'}  onClick={(e) => handleClickRest(e.target)}>
-                        <p className='text-center md:mr-4'>{t("modals.concentration.break")} </p>
+                        <p className='text-center text-base md:text-xl sm:mr-4'>{t("modals.concentration.break")} </p>
                         <p className='font-black'>{rest.time}</p>
                     </button>
                 </div>
                 <div className={longRest.active?'border-b-2 border-black':''}>
                     <button disabled={!longRest.active && running} className={!longRest.active && running?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-secondary/10 items-center cursor-not-allowed opacity-50':' flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-secondary hover:bg-primary/10 items-center'} onClick={(e) => handleClickLongRest(e.target)}>
-                        <p className='text-center md:mr-4'>{t("modals.concentration.breaklong")}</p>
+                        <p className='text-center text-base md:text-xl sm:mr-4'>{t("modals.concentration.breaklong")}</p>
                         <p className='font-black'>{longRest.time}</p>
                     </button>
                 </div>
