@@ -1,33 +1,49 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { music } from "../../constants/music";
+import Track from "./Track";
+
+
 
 export default function Music(){
     const [menuVisible,setMenuVisible] = useState(false)
-    const [playing,setPlaying] = useState(false)
     const [volumeoff,setVolumeOff] = useState(false)
     const [fullScreen,setFullScreen] = useState(false)
+    const [playing,setPlaying] = useState(false)
     const [volumen,setVolumen] = useState(100)
+    const [tracks, setTracks] = useState([])
+    const [indexSong,setIndexSong] = useState(0)
+    const[indexTrack,setIndexTrack] = useState(0)
+    const [song,setSong] = useState()
 
 
+    useEffect(()=> {
+        setTracks(music.map(el => {
+            return el
+        }))
+    },[])
+
+
+
+    const handleClickBack = () => {
+
+    }
+
+
+    const handleClickNext = () => {
+
+    }
+    const handleClickPlay = () => {
+
+    }
     const handleClickMenu = () => {
         setMenuVisible(!menuVisible)
     }
 
-    const handleClickPlay = () => {
-        setPlaying(!playing)
-    }
-
-    const handleClickBack = () => {
-        console.log("Cancion Anterior")
-    }
-
-    const handleClickNext = () => {
-        console.log("Cancion Siguiente")
-    }
 
     const handleClickVolumeOff = () => {
         setVolumeOff(!volumeoff)
     }
+
     const handleClickFullScreen = () => {
         if(fullScreen){
             document.documentElement.requestFullscreen()
@@ -43,22 +59,14 @@ export default function Music(){
         setVolumen(e.target.value)
     }
 
+    console.log(indexSong)
     return(
         <div className="w-full sticky bottom-0 bg-slate-100">
             {menuVisible &&
-                <div className="flex flex-col">
-                    <h2 className="align-left">Mixes</h2>
+                <div className="flex flex-col p-8">
+                    <h2 className="align-left text-2xl my-4 font-semibold">Mixes</h2>
                     <div className="w-full flex">
-                        {music.map(el => {
-                            console.log(el)
-                            return(
-                                <div className="flex flex-col">
-                                    <div></div>
-                                    <p>{el.title}</p>
-                                    <p>{el.songs.length} tracks</p>
-                                </div>
-                            )
-                        })}
+                        {music.map(el => <Track handleClickPlay={handleClickPlay} play={playing} volumen={volumen} key={el.id} title={el.title} songs={el.songs} img={el.img} />)}
                     </div>
                 </div>}
             <div className=" flex justify-between gap-2 md:gap-4">
