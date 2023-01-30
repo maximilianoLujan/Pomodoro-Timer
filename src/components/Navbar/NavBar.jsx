@@ -6,7 +6,7 @@ export default function NavBar(){
     
 
     return(
-        <header className="flex w-full p-7 justify-between items-center relative z-40">
+        <header id='home' className="flex w-full p-7 justify-between items-center relative z-40">
             <h1 className="text-xl font-bold">Pomodoro Timer</h1>
             <div className='flex items-center'>
                 <ButtonConfig />

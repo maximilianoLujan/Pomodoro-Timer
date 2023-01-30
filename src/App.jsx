@@ -6,10 +6,14 @@ import WhatIsPomodore from "./components/WhatIs/WhatIsPomodore"
 import WhoUse from './components/whouse/WhoUse'
 import Cience from './components/Cience/Cience'
 import Ask from './components/Ask/Ask'
+import Music from './components/Music/Music'
+
+
+
 
 function App() {
   return (
-    <div className='max-w-screen-2xl flex flex-col items-center'>
+    <div id='boss' className='scroll-smooth max-w-screen-2xl flex flex-col items-center'>
       <NavBar/>
       <main className='w-full p-7 mb-80'>
         <div className='flex flex-col lg:flex-row'>
@@ -22,6 +26,7 @@ function App() {
       <WhoUse />
       <Cience /> 
       <Ask />
+      <Music />
     </div>
     
   )
