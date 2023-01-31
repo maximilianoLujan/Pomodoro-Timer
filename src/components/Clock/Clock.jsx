@@ -82,7 +82,7 @@ export default function Clock(){
 
     return(
         <div className="w-full lg:w-5/6 flex flex-col items-center lg:border-r-2">
-            <h2 className='font-bold text-xl'>¿{t("clock.challenge")}? 😒</h2>
+            <h2 className='font-bold text-lg  sm:text-xl'>¿{t("clock.challenge")}? 😒</h2>
             <div className='flex mt-10 w-full justify-center mb-10'>
                 <div className={pomodoro.active?'border-b-2 border-black':''}>
                     <button disabled={!pomodoro.active && running} className={running && !pomodoro.active?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 items-center cursor-not-allowed opacity-50':' flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 items-center'} onClick={(e) => handleClickPomodoro(e.target)}>

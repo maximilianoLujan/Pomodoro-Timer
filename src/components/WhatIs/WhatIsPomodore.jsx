@@ -8,7 +8,7 @@ export default function WhatIsPomodore(){
         <div id="whatis" className="w-full flex justify-center items-center relative py-44">
             <Arrow direction='top' id='#challenge'/> 
             <div className=" md:w-4/5">
-                <h2 className="font-bold text-center text-4xl mb-8 md:text-5xl md:mb-12">{t("whatis.question")}</h2>
+                <h2 className="font-bold text-center  text-2xl mb-8 md:text-5xl md:mb-12">{t("whatis.question")}</h2>
                 <div className="flex flex-col md:flex-row items-center">
                     <div className="w-1/2">
                         <img className="w-full" src="images/whatis.webp" alt="Chico estudiando" />
