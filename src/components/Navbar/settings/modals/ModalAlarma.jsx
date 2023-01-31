@@ -70,7 +70,7 @@ export default function ModalAlarma({back}){
 
 
     return(
-        <div className="bg-white h-max w-full flex flex-col p-6">
+        <div className="bg-slate-50 h-max w-full flex flex-col sm:p-6">
             <div className="flex mb-6">
                 <ArrowBackIcon className="cursor-pointer hover:text-blue-600 mr-4" fontSize='large' onClick={back}/>
                 <p className="text-2xl">{t("config.alarm")}</p>
@@ -79,9 +79,9 @@ export default function ModalAlarma({back}){
                 <p className="mb-2 text-left w-full">
                     {t("modals.alarm")}
                 </p>
-                <div className="flex border-slate-400  border-2 border-solid w-full justify-evenly rounded">
+                <div className="flex border-slate-400  border-2 border-solid w-full justify-evenly rounded ">
                     {sounds.map(sound => <button key={sound.id} onClick={() => handleClickSound(sound)} className='w-full border-r-2 p-2 focus:bg-blue-600 text-xs'>{sound.name}</button>)}
-                    <button onClick={() => handleClickMute()} className="w-full p-2 focus:bg-blue-600 text-xs">
+                    <button onClick={() => handleClickMute()} className="w-full sm:p-2 focus:bg-blue-600 text-xs">
                         <VolumeOffIcon />
                     </button>
                 </div>

@@ -59,7 +59,7 @@ export default function ButtonConfig(){
                 <p className='hidden sm:block'>{t("navbar.customize")}</p>
             </button>
             {modal
-            ?<div  className='absolute w-80' style={{left:'-12rem'}}>
+            ?<div  className='absolute w-56 sm:w-80' style={{left:'-12rem'}}>
                 <ModalConfig bebe={bebe} popular={popular} medio={medio} extendido={extendido} changeChecked={changeChecked}/>
             </div>
             :null}

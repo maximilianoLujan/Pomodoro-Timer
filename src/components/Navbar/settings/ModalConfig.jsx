@@ -27,27 +27,27 @@ export default function ModalConfig({bebe,medio,popular,extendido,changeChecked}
         <div >
             {config
             ?<div className="flex flex-col shadow-2xl p-3 bg-slate-50">
-                <button onClick={() => handleClick("concentracion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                <button onClick={() => handleClick("concentracion")} className='py-4 sm:p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                     <AccessTimeFilledIcon className='mx-4'/>
-                    <p className='mx-4 font-bold'>{t("config.focus")}</p>
+                    <p className='sm:mx-4 font-bold'>{t("config.focus")}</p>
                     <ArrowForwardIcon/>
                 </button>
                     
-                <button onClick={() => handleClick("alarma")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                <button onClick={() => handleClick("alarma")} className='py-4 sm:p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                     <NotificationsIcon className='mx-4'/>
-                    <p className='mx-4 font-bold'>{t("config.alarm")}</p>
+                    <p className='sm:mx-4 font-bold'>{t("config.alarm")}</p>
                     <ArrowForwardIcon/>
                 </button>
                     
-                <button onClick={() => handleClick("inicio")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                <button onClick={() => handleClick("inicio")} className='py-4 sm:p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                     <RotateRightIcon className='mx-4'/>
-                    <p className='mx-4 font-bold'>{t("config.start")}</p>
+                    <p className='sm:mx-4 font-bold'>{t("config.start")}</p>
                     <ArrowForwardIcon/>
                 </button>
                     
-                <button onClick={() => handleClick("notificacion")} className='p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
+                <button onClick={() => handleClick("notificacion")} className='py-4 sm:p-4 flex justify-between cursor-pointer hover:bg-sky-500 hover:text-sky-100'>
                     <MarkChatUnreadIcon className='mx-4'/>
-                    <p className='mx-4 font-bold'>{t("config.notification")}</p>
+                    <p className='sm:mx-4 font-bold'>{t("config.notification")}</p>
                     <ArrowForwardIcon/>
                 </button>
                     
