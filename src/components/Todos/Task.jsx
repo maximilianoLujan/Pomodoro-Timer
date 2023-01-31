@@ -46,7 +46,7 @@ export default function Task(props){
         <div >
             <TaskList />
             <div style={{boxShadow:'inset 0 0 14px 3px rgb(0 0 0 / 8%)'}} className="p-6 flex flex-col items-start border-2 border-black rounded-md">
-                <input onChange={handleChangeInput} placeholder={t("todos.placeholder")}  type="text" name="task" className="mb-4 border-0 outline-0 w-full" />
+                <input autocomplete='off' onChange={handleChangeInput} placeholder={t("todos.placeholder")}  type="text" name="task" className="mb-4 border-0 outline-0 w-full" />
                 <div className="flex">
                     <button className="bg-primary/90 text-neutral-200 py-2 sm:px-6 rounded-md hover:bg-primary" onClick={handleClickEnviar}>{t("todos.button1")}</button>
                     <button className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary" onClick={handleClick}>{t("todos.button2")}</button>
@@ -89,7 +89,7 @@ function TaskList(){
                 {el.edit 
                 ?           
                 <div className="flex flex-col w-full p-6">
-                    <input onChange={(e) => setNewTaskName(e.target.value)} placeholder={el.taskName} type="text" name="task" className="mb-4 border-0 outline-0" />
+                    <input autocomplete='off' onChange={(e) => setNewTaskName(e.target.value)} placeholder={el.taskName} type="text" name="task" className="mb-4 border-0 outline-0" />
                     <div className="flex ">
                         <button onClick={() => handleClickSaveChanges(el.id)} className="bg-primary/90 text-neutral-200 py-2 px-6 rounded-md hover:bg-primary" >{t("todos.button1")}</button>
                         <button onClick={() => cancelEditTask()} className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary">{t("todos.button2")}</button>
@@ -112,7 +112,7 @@ function TaskList(){
                         {el.edit 
                         ?           
                         <div className="flex flex-col">
-                            <input onChange={(e) => setNewTaskName(e.target.value)} placeholder={el.taskName} type="text" name="task" className="mb-4 border-0 outline-0" />
+                            <input autocomplete='off' onChange={(e) => setNewTaskName(e.target.value)} placeholder={el.taskName} type="text" name="task" className="mb-4 border-0 outline-0" />
                             <div className="flex">
                                 <button onClick={() => handleClickSaveChanges(el.id)} className="bg-primary/90 text-neutral-200 py-2 px-6 rounded-md hover:bg-primary" >{t("todos.button1")}</button>
                                 <button onClick={() => cancelEditTask()} className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary">{t("todos.button2")}</button>
