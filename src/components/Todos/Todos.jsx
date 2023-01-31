@@ -38,7 +38,7 @@ export default function Todos(){
     }
 
     return(
-        <div className="w-screen sm:w-full lg:w-1/4 p-6">
+        <div className="w-full sm:w-full lg:w-1/4 p-6">
             <div className="flex justify-between items-center mb-4 relative">
                 <div className="flex">
                     <p className="mr-2 sm:mr-4 text-sm sm:text-3xl font-bold">{t("todos.task")}</p>
