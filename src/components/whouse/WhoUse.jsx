@@ -6,7 +6,7 @@ export default function WhoUse(){
 
 
     return(
-        <div id="howuse" className="w-full flex justify-center items-center relative py-44">
+        <div id="howuse" className="w-screen sm:w-full flex justify-center items-center relative py-44">
             <Arrow direction='top' id='#whatis'/>
             <div className="bg-primary w-full flex flex-col items-center">
                 <h2 className="font-bold text-center text-white text-2xl mb-8 md:text-5xl mt-24 md:mb-12">{t("whouse.title")}</h2>

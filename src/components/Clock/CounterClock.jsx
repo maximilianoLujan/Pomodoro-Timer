@@ -2,49 +2,60 @@ import { useState , useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useSelector } from "react-redux"
 import { Howl } from "howler"
+import { useDispatch } from "react-redux"
+import { setFalse , setTrue } from "../../features/running/running"
 
-const DASH = 1100
+
+const DASH = 1100,
+    DASH_MOVIL = 730
+
 
 export default function CounterClock({ bg , time , name , increase, concentration , setActive , offActive}){
     const value = useSelector(state => state.config.value)
     const valueAlarm = useSelector(state => state.alarm.value)
+    const dispatch = useDispatch()
     const [t] = useTranslation("global")
     const [running,setRunning] = useState(false)
     const [interv,setInterv] = useState()
     const [minuts,setMinuts] = useState()
     const [seconds,setSeconds] = useState(0)
     const [dash,setDash] = useState(DASH)
+    const [dashMovil,setDashMovil] = useState(DASH_MOVIL)
 
     useEffect(() => {
         setMinuts(value.focus)
     },[])
 
-    const handleClickStart = () => {
+    const handleClickStart = () =>{
+        dispatch(setTrue())
+        let run = true
         setActive(concentration)
         setRunning(true)
         let minuts = time
         let seconds = 0
         setMinuts(minuts)
         const cont = setInterval(() => {
+            if (run == false) return
             const currentTime = minuts * 60 + seconds,
                 porcentaje = (currentTime * 100) / (time *60),
-                dash = (DASH * porcentaje) / 100
+                dash = (DASH * porcentaje) / 100,
+                dashMovil = (DASH_MOVIL * porcentaje) / 100
             if (seconds == 0 && minuts == 0){
-                increase(name)
-                soundAlarm(valueAlarm)
+                increase(concentration)
                 handleClickStop()
-                return
-            }
-            if (seconds == 0){
-                seconds = 59
-                minuts = minuts - 1
-                setSeconds(seconds)
-            } else{
+                soundAlarm(valueAlarm)
+                run = false
+            } else if (seconds == 0){
+                    seconds = 59
+                    minuts = minuts - 1
+                    setSeconds(seconds)
+                } else{
                 seconds = seconds - 1
-                setSeconds(seconds)
-            }
+                    setSeconds(seconds)
+                }
             setMinuts(minuts)
             setDash(dash)
+            setDashMovil(dashMovil)
         },1000)
         setInterv(cont)
     }
@@ -52,10 +63,13 @@ export default function CounterClock({ bg , time , name , increase, concentratio
 
     const handleClickStop = () => {
         setDash(DASH)
+        setDashMovil(DASH_MOVIL)
+        dispatch(setFalse())
         offActive()
         setRunning(false)
         const cont = interv
         clearInterval(cont)
+        setInterv(cont)
         setMinuts(value.focus)
         setSeconds(0)
     }
@@ -103,7 +117,7 @@ export default function CounterClock({ bg , time , name , increase, concentratio
                     stroke:bg,                               
                     strokeWidth:'35px',
                     strokeDasharray:'1100',
-                    strokeDashoffset:dash
+                    strokeDashoffset:dash?dash:DASH
                 }} 
                 />
                 <circle className="fill-none lg:hidden" cx="120px" cy="120px" r="115px"
@@ -111,8 +125,8 @@ export default function CounterClock({ bg , time , name , increase, concentratio
                 style={{
                     stroke:bg,
                     strokeWidth:'10px',
-                    strokeDasharray:'1100',
-                    strokeDashoffset:dash
+                    strokeDasharray:'730',
+                    strokeDashoffset:dashMovil?dashMovil:DASH_MOVIL
                 }} 
                 />
                 </svg>
@@ -138,9 +152,10 @@ function soundAlarm(sound){
 
 
     soundHowl.play()
-
-
+    console.log("suena la alarma")
+    
     setTimeout(() => {
         soundHowl.stop()
+        console.log("se detiene la alarma")
     }, 2000);
 }

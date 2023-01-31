@@ -38,11 +38,11 @@ export default function Todos(){
     }
 
     return(
-        <div className="w-full lg:w-1/4 p-6">
+        <div className="w-screen sm:w-full lg:w-1/4 p-6">
             <div className="flex justify-between items-center mb-4 relative">
                 <div className="flex">
-                    <p className="mr-4 text-3xl font-bold">{t("todos.task")}</p>
-                    <p className=" text-3xl font-bold">{todo.length}</p>
+                    <p className="mr-2 sm:mr-4 text-sm sm:text-3xl font-bold">{t("todos.task")}</p>
+                    <p className="text-sm sm:text-3xl font-bold">{todo.length}</p>
                 </div>
                 <div >
                     <MoreHorizIcon onClick={handleClickOptions} className="cursor-pointer" fontSize="medium"/>

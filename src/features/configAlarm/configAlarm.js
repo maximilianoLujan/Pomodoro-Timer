@@ -15,7 +15,6 @@ export const configAlarmSlice = createSlice({
             volume:action.payload.volumen
         }
         state.value = newValue
-        console.log(state.value)
     }
   }
 })

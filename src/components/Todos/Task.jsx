@@ -43,26 +43,26 @@ export default function Task(props){
 
     if (addTask){
         return(
-        <>
+        <div >
             <TaskList />
             <div style={{boxShadow:'inset 0 0 14px 3px rgb(0 0 0 / 8%)'}} className="p-6 flex flex-col items-start border-2 border-black rounded-md">
                 <input onChange={handleChangeInput} placeholder={t("todos.placeholder")}  type="text" name="task" className="mb-4 border-0 outline-0 w-full" />
                 <div className="flex">
-                    <button className="bg-primary/90 text-neutral-200 py-2 px-6 rounded-md hover:bg-primary" onClick={handleClickEnviar}>{t("todos.button1")}</button>
+                    <button className="bg-primary/90 text-neutral-200 py-2 sm:px-6 rounded-md hover:bg-primary" onClick={handleClickEnviar}>{t("todos.button1")}</button>
                     <button className="py-2 px-6 rounded-md hover:bg-primary/10 hover:text-primary" onClick={handleClick}>{t("todos.button2")}</button>
                 </div>
             </div>
-        </>
+        </div>
         )
     } else{
         return(
-            <>
+            <div >
                 <TaskList />
                 <div style={{boxShadow:'inset 0 0 14px 3px rgb(0 0 0 / 8%)'}} onClick={handleClick} className="p-6 border-2 border-black/20 hover:border-black border-dashed rounded-md flex cursor-pointer">
                     <AddIcon />
                     <p>{t("todos.add")}</p>
                 </div>
-            </>
+            </div>
         )
     }
 

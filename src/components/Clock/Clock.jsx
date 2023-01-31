@@ -32,18 +32,19 @@ export default function Clock(){
 
     //Esta funcion incrementa las veces que el usuario cuplio el tiempo propuesto
     const increase= (value) =>{
+        console.log(value)
         switch (value) {
             case 'focus':
-                const focus = pomodoro.time + 1
-                setPomodoro({...pomodoro,time:focus})
+                const time = pomodoro.time + 1
+                setPomodoro({...pomodoro,time:time})
                 break;
             case 'recreo':
-                const recreo = rest.time + 1
-                setRest({...rest,time:recreo})
+                const timerest = rest.time + 1
+                setRest({...rest,time:timerest})
                 break;
             case 'breakLong':
-                const breakLong = longRest.time + 1
-                setLongRest({...longRest,time:breakLong})
+                const timelong = longRest.time + 1
+                setLongRest({...longRest,time:timelong})
                 break;
         
             default:
@@ -82,7 +83,7 @@ export default function Clock(){
 
     return(
         <div className="w-full lg:w-5/6 flex flex-col items-center lg:border-r-2">
-            <h2 className='font-bold text-lg  sm:text-xl'>¿{t("clock.challenge")}? 😒</h2>
+            <h2 className='font-bold text-xs  sm:text-xl'>¿{t("clock.challenge")}? 😒</h2>
             <div className='flex mt-10 w-full justify-center mb-10'>
                 <div className={pomodoro.active?'border-b-2 border-black':''}>
                     <button disabled={!pomodoro.active && running} className={running && !pomodoro.active?'flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 items-center cursor-not-allowed opacity-50':' flex flex-col sm:flex-row text-sm sm:text-xl py-2 px-2 sm:px-10 text-primary hover:bg-primary/10 items-center'} onClick={(e) => handleClickPomodoro(e.target)}>
