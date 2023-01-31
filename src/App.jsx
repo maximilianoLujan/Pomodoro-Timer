@@ -13,9 +13,9 @@ import Music from './components/Music/Music'
 
 function App() {
   return (
-    <div id='boss' className='scroll-smooth max-w-screen-2xl flex flex-col items-center'>
+    <div id='boss' className='max-w-screen-2xl flex flex-col items-center'>
       <NavBar/>
-      <main className='w-full p-7 mb-80'>
+      <main className='w-full p-7 mb-80 relative'>
         <div className='flex flex-col lg:flex-row'>
           <Clock/>
           <Todos/>
@@ -28,7 +28,6 @@ function App() {
       <Ask />
       <Music />
     </div>
-    
   )
 }
 
