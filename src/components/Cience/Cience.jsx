@@ -5,7 +5,7 @@ import Arrow from "../Arrow"
 export default function Cience(){
     const [t] = useTranslation("global")
     return (
-        <div id="ciencia" className="w-full flex justify-center items-center relative py-44">
+        <div id="ciencia" className="w-screen sm:w-full flex justify-center items-center relative py-44">
             <Arrow direction='top' id='#howuse' />
             <div className="md:w-4/5">
                 <h2 className="font-bold text-center text-4xl mb-8 md:text-5xl md:mb-12">{t("cience.title")}</h2>

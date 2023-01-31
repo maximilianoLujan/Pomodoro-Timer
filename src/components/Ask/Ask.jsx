@@ -54,12 +54,12 @@ export default function Ask(){
 
 
     return(
-        <div id="ask" className="w-full bg-primary flex justify-center items-center relative py-44">
+        <div id="ask" className="w-screen sm:w-full bg-primary flex justify-center items-center relative py-44">
             <Arrow direction='top' id="#ciencia" />
             <div className="bg-primary w-full flex justify-center">
                 <div className="w-5/6 sm:w-1/2">
                     <h2 className="font-bold text-white text-center text-4xl mb-8 md:text-5xl md:mb-12">{t("ask.title")}</h2>
-                    <div className="w-full border-2 border-slate-400 rounded-lg m-4 borderb-0">
+                    <div className="w-full border-2 border-slate-400 rounded-lg my-4 borderb-0">
                         <section className="p-6 flex flex-col border-b-2 border-slate-400">
                             <div onClick={() => handleClickOpen('how')}  className="flex justify-between cursor-pointer">
                                 <h2 className={how?"font-bold text-yellow-400 sm:text-2xl mb-6":"text-white font-bold sm:text-2xl"}>{t("ask.flip.title")}</h2>

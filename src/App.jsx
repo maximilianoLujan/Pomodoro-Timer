@@ -15,7 +15,7 @@ function App() {
   return (
     <div id='boss' className='max-w-screen-2xl flex flex-col items-center'>
       <NavBar/>
-      <main className='w-full p-7 mb-80 relative'>
+      <main className='w-screen sm:w-full p-7 mb-80 relative'>
         <div className='flex flex-col lg:flex-row'>
           <Clock/>
           <Todos/>

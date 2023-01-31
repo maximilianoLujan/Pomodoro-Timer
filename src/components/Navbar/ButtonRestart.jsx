@@ -12,7 +12,7 @@ export default function ButtonRestart(){
 
     const [t,i18n] = useTranslation("global")
     return(
-    <button onClick={handleClickRestart} className='flex items-center mx-4'>
+    <button onClick={handleClickRestart} className='flex items-center sm:mx-4'>
         <RestartAltIcon fontSize='medium'/>
         <p className='hidden sm:block'>{t("navbar.restart")}</p>
     </button>)
